@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **last_request**
-> LastRequest200Response last_request(last_request_request=last_request_request)
+> LastRequest200Response last_request(last_request_request)
 
 lastRequest REST method
 
@@ -49,11 +49,11 @@ configuration = urbandatasetgateway_client.Configuration(
 with urbandatasetgateway_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = urbandatasetgateway_client.UrbanDatasetGatewayApi(api_client)
-    last_request_request = {"resource_id":"SCP-1_SmartBuildingCasaccia-3_SmartBuildingAnomalies-1.0_20180125120000"} # LastRequestRequest |  (optional)
+    last_request_request = {"resource_id":"SCP-1_SmartBuildingCasaccia-3_SmartBuildingAnomalies-1.0_20180125120000"} # LastRequestRequest | 
 
     try:
         # lastRequest REST method
-        api_response = api_instance.last_request(last_request_request=last_request_request)
+        api_response = api_instance.last_request(last_request_request)
         print("The response of UrbanDatasetGatewayApi->last_request:\n")
         pprint(api_response)
     except Exception as e:
@@ -67,7 +67,7 @@ with urbandatasetgateway_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **last_request_request** | [**LastRequestRequest**](LastRequestRequest.md)|  | [optional] 
+ **last_request_request** | [**LastRequestRequest**](LastRequestRequest.md)|  | 
 
 ### Return type
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **login**
-> Login200Response login(login_request=login_request)
+> Login200Response login(login_request)
 
 login REST method
 
@@ -118,11 +118,11 @@ configuration = urbandatasetgateway_client.Configuration(
 with urbandatasetgateway_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = urbandatasetgateway_client.UrbanDatasetGatewayApi(api_client)
-    login_request = {"username":"myusername","password":"mypassword"} # LoginRequest |  (optional)
+    login_request = {"username":"myusername","password":"mypassword"} # LoginRequest | 
 
     try:
         # login REST method
-        api_response = api_instance.login(login_request=login_request)
+        api_response = api_instance.login(login_request)
         print("The response of UrbanDatasetGatewayApi->login:\n")
         pprint(api_response)
     except Exception as e:
@@ -136,7 +136,7 @@ with urbandatasetgateway_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **login_request** | [**LoginRequest**](LoginRequest.md)|  | [optional] 
+ **login_request** | [**LoginRequest**](LoginRequest.md)|  | 
 
 ### Return type
 
@@ -160,7 +160,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **push**
-> Push200Response push(push_request=push_request)
+> Push200Response push(push_request)
 
 push REST method
 
@@ -197,11 +197,11 @@ configuration = urbandatasetgateway_client.Configuration(
 with urbandatasetgateway_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = urbandatasetgateway_client.UrbanDatasetGatewayApi(api_client)
-    push_request = urbandatasetgateway_client.PushRequest() # PushRequest |  (optional)
+    push_request = urbandatasetgateway_client.PushRequest() # PushRequest | 
 
     try:
         # push REST method
-        api_response = api_instance.push(push_request=push_request)
+        api_response = api_instance.push(push_request)
         print("The response of UrbanDatasetGatewayApi->push:\n")
         pprint(api_response)
     except Exception as e:
@@ -215,7 +215,7 @@ with urbandatasetgateway_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **push_request** | [**PushRequest**](PushRequest.md)|  | [optional] 
+ **push_request** | [**PushRequest**](PushRequest.md)|  | 
 
 ### Return type
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **searching_request**
-> SearchingRequest200Response searching_request(searching_request_request=searching_request_request)
+> SearchingRequest200Response searching_request(searching_request_request)
 
 searchingRequest REST method
 
@@ -276,11 +276,11 @@ configuration = urbandatasetgateway_client.Configuration(
 with urbandatasetgateway_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = urbandatasetgateway_client.UrbanDatasetGatewayApi(api_client)
-    searching_request_request = {"resource_id":"SCP-1_SmartBuildingCasaccia-3_SmartBuildingAnomalies-1.0_20180125120000"} # SearchingRequestRequest |  (optional)
+    searching_request_request = {"resource_id":"SCP-1_SmartBuildingCasaccia-3_SmartBuildingAnomalies-1.0_20180125120000"} # SearchingRequestRequest | 
 
     try:
         # searchingRequest REST method
-        api_response = api_instance.searching_request(searching_request_request=searching_request_request)
+        api_response = api_instance.searching_request(searching_request_request)
         print("The response of UrbanDatasetGatewayApi->searching_request:\n")
         pprint(api_response)
     except Exception as e:
@@ -294,7 +294,7 @@ with urbandatasetgateway_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **searching_request_request** | [**SearchingRequestRequest**](SearchingRequestRequest.md)|  | [optional] 
+ **searching_request_request** | [**SearchingRequestRequest**](SearchingRequestRequest.md)|  | 
 
 ### Return type
 

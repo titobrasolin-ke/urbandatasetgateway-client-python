@@ -17,7 +17,6 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from typing import Optional
 from urbandatasetgateway_client.models.last_request200_response import LastRequest200Response
 from urbandatasetgateway_client.models.last_request_request import LastRequestRequest
 from urbandatasetgateway_client.models.login200_response import Login200Response
@@ -49,7 +48,7 @@ class UrbanDatasetGatewayApi:
     @validate_call
     def last_request(
         self,
-        last_request_request: Optional[LastRequestRequest] = None,
+        last_request_request: LastRequestRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -67,7 +66,7 @@ class UrbanDatasetGatewayApi:
 
         The \"lastRequest\" method allows you to request the last UrbanDataset generated through a REQUEST / RESPONSE call.
 
-        :param last_request_request:
+        :param last_request_request: (required)
         :type last_request_request: LastRequestRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -116,7 +115,7 @@ class UrbanDatasetGatewayApi:
     @validate_call
     def last_request_with_http_info(
         self,
-        last_request_request: Optional[LastRequestRequest] = None,
+        last_request_request: LastRequestRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -134,7 +133,7 @@ class UrbanDatasetGatewayApi:
 
         The \"lastRequest\" method allows you to request the last UrbanDataset generated through a REQUEST / RESPONSE call.
 
-        :param last_request_request:
+        :param last_request_request: (required)
         :type last_request_request: LastRequestRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -183,7 +182,7 @@ class UrbanDatasetGatewayApi:
     @validate_call
     def last_request_without_preload_content(
         self,
-        last_request_request: Optional[LastRequestRequest] = None,
+        last_request_request: LastRequestRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -201,7 +200,7 @@ class UrbanDatasetGatewayApi:
 
         The \"lastRequest\" method allows you to request the last UrbanDataset generated through a REQUEST / RESPONSE call.
 
-        :param last_request_request:
+        :param last_request_request: (required)
         :type last_request_request: LastRequestRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -321,7 +320,7 @@ class UrbanDatasetGatewayApi:
     @validate_call
     def login(
         self,
-        login_request: Optional[LoginRequest] = None,
+        login_request: LoginRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -339,7 +338,7 @@ class UrbanDatasetGatewayApi:
 
         The \"login\" method allows a client to authenticate itself to the service, by using username and password and receiving a JWT (JSON Web Token) in string format which will use in the subsequent calls.
 
-        :param login_request:
+        :param login_request: (required)
         :type login_request: LoginRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -388,7 +387,7 @@ class UrbanDatasetGatewayApi:
     @validate_call
     def login_with_http_info(
         self,
-        login_request: Optional[LoginRequest] = None,
+        login_request: LoginRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -406,7 +405,7 @@ class UrbanDatasetGatewayApi:
 
         The \"login\" method allows a client to authenticate itself to the service, by using username and password and receiving a JWT (JSON Web Token) in string format which will use in the subsequent calls.
 
-        :param login_request:
+        :param login_request: (required)
         :type login_request: LoginRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -455,7 +454,7 @@ class UrbanDatasetGatewayApi:
     @validate_call
     def login_without_preload_content(
         self,
-        login_request: Optional[LoginRequest] = None,
+        login_request: LoginRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -473,7 +472,7 @@ class UrbanDatasetGatewayApi:
 
         The \"login\" method allows a client to authenticate itself to the service, by using username and password and receiving a JWT (JSON Web Token) in string format which will use in the subsequent calls.
 
-        :param login_request:
+        :param login_request: (required)
         :type login_request: LoginRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -592,7 +591,7 @@ class UrbanDatasetGatewayApi:
     @validate_call
     def push(
         self,
-        push_request: Optional[PushRequest] = None,
+        push_request: PushRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -610,7 +609,7 @@ class UrbanDatasetGatewayApi:
 
         The \"push\" method allows a client to send an UrbanDataset through a single PUSH call.
 
-        :param push_request:
+        :param push_request: (required)
         :type push_request: PushRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -659,7 +658,7 @@ class UrbanDatasetGatewayApi:
     @validate_call
     def push_with_http_info(
         self,
-        push_request: Optional[PushRequest] = None,
+        push_request: PushRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -677,7 +676,7 @@ class UrbanDatasetGatewayApi:
 
         The \"push\" method allows a client to send an UrbanDataset through a single PUSH call.
 
-        :param push_request:
+        :param push_request: (required)
         :type push_request: PushRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -726,7 +725,7 @@ class UrbanDatasetGatewayApi:
     @validate_call
     def push_without_preload_content(
         self,
-        push_request: Optional[PushRequest] = None,
+        push_request: PushRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -744,7 +743,7 @@ class UrbanDatasetGatewayApi:
 
         The \"push\" method allows a client to send an UrbanDataset through a single PUSH call.
 
-        :param push_request:
+        :param push_request: (required)
         :type push_request: PushRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -864,7 +863,7 @@ class UrbanDatasetGatewayApi:
     @validate_call
     def searching_request(
         self,
-        searching_request_request: Optional[SearchingRequestRequest] = None,
+        searching_request_request: SearchingRequestRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -882,7 +881,7 @@ class UrbanDatasetGatewayApi:
 
         The \"searchingRequest\" method allows a client to request one or more UrbanDatasets through a REQUEST/RESPONSE call, providing the identifier of the resource, with search filters like geographical coordinates and period at the context level (contextualization element in the UrbanDataset format).  With all optional parameters set to null, it achieves the same result as a basicRequest.
 
-        :param searching_request_request:
+        :param searching_request_request: (required)
         :type searching_request_request: SearchingRequestRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -931,7 +930,7 @@ class UrbanDatasetGatewayApi:
     @validate_call
     def searching_request_with_http_info(
         self,
-        searching_request_request: Optional[SearchingRequestRequest] = None,
+        searching_request_request: SearchingRequestRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -949,7 +948,7 @@ class UrbanDatasetGatewayApi:
 
         The \"searchingRequest\" method allows a client to request one or more UrbanDatasets through a REQUEST/RESPONSE call, providing the identifier of the resource, with search filters like geographical coordinates and period at the context level (contextualization element in the UrbanDataset format).  With all optional parameters set to null, it achieves the same result as a basicRequest.
 
-        :param searching_request_request:
+        :param searching_request_request: (required)
         :type searching_request_request: SearchingRequestRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -998,7 +997,7 @@ class UrbanDatasetGatewayApi:
     @validate_call
     def searching_request_without_preload_content(
         self,
-        searching_request_request: Optional[SearchingRequestRequest] = None,
+        searching_request_request: SearchingRequestRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1016,7 +1015,7 @@ class UrbanDatasetGatewayApi:
 
         The \"searchingRequest\" method allows a client to request one or more UrbanDatasets through a REQUEST/RESPONSE call, providing the identifier of the resource, with search filters like geographical coordinates and period at the context level (contextualization element in the UrbanDataset format).  With all optional parameters set to null, it achieves the same result as a basicRequest.
 
-        :param searching_request_request:
+        :param searching_request_request: (required)
         :type searching_request_request: SearchingRequestRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

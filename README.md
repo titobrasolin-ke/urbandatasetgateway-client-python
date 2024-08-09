@@ -78,11 +78,11 @@ configuration = urbandatasetgateway_client.Configuration(
 with urbandatasetgateway_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = urbandatasetgateway_client.UrbanDatasetGatewayApi(api_client)
-    last_request_request = {"resource_id":"SCP-1_SmartBuildingCasaccia-3_SmartBuildingAnomalies-1.0_20180125120000"} # LastRequestRequest |  (optional)
+    last_request_request = {"resource_id":"SCP-1_SmartBuildingCasaccia-3_SmartBuildingAnomalies-1.0_20180125120000"} # LastRequestRequest | 
 
     try:
         # lastRequest REST method
-        api_response = api_instance.last_request(last_request_request=last_request_request)
+        api_response = api_instance.last_request(last_request_request)
         print("The response of UrbanDatasetGatewayApi->last_request:\n")
         pprint(api_response)
     except ApiException as e:
