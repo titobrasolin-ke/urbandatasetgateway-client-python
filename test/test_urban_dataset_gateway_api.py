@@ -27,38 +27,38 @@ class TestUrbanDatasetGatewayApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_do_login(self) -> None:
-        """Test case for do_login
-
-        login REST method
-        """
-        pass
-
-    def test_do_test(self) -> None:
-        """Test case for do_test
-
-        test REST method
-        """
-        pass
-
-    def test_push_urban_dataset(self) -> None:
-        """Test case for push_urban_dataset
-
-        push REST method
-        """
-        pass
-
-    def test_request_last_urban_dataset(self) -> None:
-        """Test case for request_last_urban_dataset
+    def test_last_request(self) -> None:
+        """Test case for last_request
 
         lastRequest REST method
         """
         pass
 
-    def test_search_urban_datasets(self) -> None:
-        """Test case for search_urban_datasets
+    def test_login(self) -> None:
+        """Test case for login
+
+        login REST method
+        """
+        pass
+
+    def test_push(self) -> None:
+        """Test case for push
+
+        push REST method
+        """
+        pass
+
+    def test_searching_request(self) -> None:
+        """Test case for searching_request
 
         searchingRequest REST method
+        """
+        pass
+
+    def test_test(self) -> None:
+        """Test case for test
+
+        test REST method
         """
         pass
 

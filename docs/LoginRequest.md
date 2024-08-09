@@ -1,4 +1,4 @@
-# DoLoginRequest
+# LoginRequest
 
 
 ## Properties
@@ -11,19 +11,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from urbandatasetgateway_client.models.do_login_request import DoLoginRequest
+from urbandatasetgateway_client.models.login_request import LoginRequest
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of DoLoginRequest from a JSON string
-do_login_request_instance = DoLoginRequest.from_json(json)
+# create an instance of LoginRequest from a JSON string
+login_request_instance = LoginRequest.from_json(json)
 # print the JSON string representation of the object
-print(DoLoginRequest.to_json())
+print(LoginRequest.to_json())
 
 # convert the object into a dict
-do_login_request_dict = do_login_request_instance.to_dict()
-# create an instance of DoLoginRequest from a dict
-do_login_request_from_dict = DoLoginRequest.from_dict(do_login_request_dict)
+login_request_dict = login_request_instance.to_dict()
+# create an instance of LoginRequest from a dict
+login_request_from_dict = LoginRequest.from_dict(login_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

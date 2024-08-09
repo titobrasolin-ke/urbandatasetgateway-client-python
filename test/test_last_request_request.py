@@ -15,10 +15,10 @@
 
 import unittest
 
-from urbandatasetgateway_client.models.do_login_request import DoLoginRequest
+from urbandatasetgateway_client.models.last_request_request import LastRequestRequest
 
-class TestDoLoginRequest(unittest.TestCase):
-    """DoLoginRequest unit test stubs"""
+class TestLastRequestRequest(unittest.TestCase):
+    """LastRequestRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,28 +26,26 @@ class TestDoLoginRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DoLoginRequest:
-        """Test DoLoginRequest
+    def make_instance(self, include_optional) -> LastRequestRequest:
+        """Test LastRequestRequest
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `DoLoginRequest`
+        # uncomment below to create an instance of `LastRequestRequest`
         """
-        model = DoLoginRequest()
+        model = LastRequestRequest()
         if include_optional:
-            return DoLoginRequest(
-                username = '',
-                password = ''
+            return LastRequestRequest(
+                resource_id = ''
             )
         else:
-            return DoLoginRequest(
-                username = '',
-                password = '',
+            return LastRequestRequest(
+                resource_id = '',
         )
         """
 
-    def testDoLoginRequest(self):
-        """Test DoLoginRequest"""
+    def testLastRequestRequest(self):
+        """Test LastRequestRequest"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

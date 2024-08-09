@@ -15,10 +15,10 @@
 
 import unittest
 
-from urbandatasetgateway_client.models.push_urban_dataset200_response import PushUrbanDataset200Response
+from urbandatasetgateway_client.models.push200_response import Push200Response
 
-class TestPushUrbanDataset200Response(unittest.TestCase):
-    """PushUrbanDataset200Response unit test stubs"""
+class TestPush200Response(unittest.TestCase):
+    """Push200Response unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,30 +26,30 @@ class TestPushUrbanDataset200Response(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PushUrbanDataset200Response:
-        """Test PushUrbanDataset200Response
+    def make_instance(self, include_optional) -> Push200Response:
+        """Test Push200Response
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `PushUrbanDataset200Response`
+        # uncomment below to create an instance of `Push200Response`
         """
-        model = PushUrbanDataset200Response()
+        model = Push200Response()
         if include_optional:
-            return PushUrbanDataset200Response(
+            return Push200Response(
                 code = '',
                 message = '',
                 detail = ''
             )
         else:
-            return PushUrbanDataset200Response(
+            return Push200Response(
                 code = '',
                 message = '',
                 detail = '',
         )
         """
 
-    def testPushUrbanDataset200Response(self):
-        """Test PushUrbanDataset200Response"""
+    def testPush200Response(self):
+        """Test Push200Response"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

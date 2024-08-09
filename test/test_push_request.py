@@ -15,10 +15,10 @@
 
 import unittest
 
-from urbandatasetgateway_client.models.push_urban_dataset_request import PushUrbanDatasetRequest
+from urbandatasetgateway_client.models.push_request import PushRequest
 
-class TestPushUrbanDatasetRequest(unittest.TestCase):
-    """PushUrbanDatasetRequest unit test stubs"""
+class TestPushRequest(unittest.TestCase):
+    """PushRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,16 +26,16 @@ class TestPushUrbanDatasetRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PushUrbanDatasetRequest:
-        """Test PushUrbanDatasetRequest
+    def make_instance(self, include_optional) -> PushRequest:
+        """Test PushRequest
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `PushUrbanDatasetRequest`
+        # uncomment below to create an instance of `PushRequest`
         """
-        model = PushUrbanDatasetRequest()
+        model = PushRequest()
         if include_optional:
-            return PushUrbanDatasetRequest(
+            return PushRequest(
                 resource_id = '',
                 dataset = urbandatasetgateway_client.models.scps_urbandataset_schema_2/0.scps-urbandataset-schema-2.0(
                     urban_dataset = urbandatasetgateway_client.models.scps_urbandataset_schema_2_0_urban_dataset.scps_urbandataset_schema_2_0_UrbanDataset(
@@ -89,7 +89,7 @@ class TestPushUrbanDatasetRequest(unittest.TestCase):
                                 ], ), ), )
             )
         else:
-            return PushUrbanDatasetRequest(
+            return PushRequest(
                 resource_id = '',
                 dataset = urbandatasetgateway_client.models.scps_urbandataset_schema_2/0.scps-urbandataset-schema-2.0(
                     urban_dataset = urbandatasetgateway_client.models.scps_urbandataset_schema_2_0_urban_dataset.scps_urbandataset_schema_2_0_UrbanDataset(
@@ -144,8 +144,8 @@ class TestPushUrbanDatasetRequest(unittest.TestCase):
         )
         """
 
-    def testPushUrbanDatasetRequest(self):
-        """Test PushUrbanDatasetRequest"""
+    def testPushRequest(self):
+        """Test PushRequest"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

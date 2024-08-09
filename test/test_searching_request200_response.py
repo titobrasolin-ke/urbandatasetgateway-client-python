@@ -15,10 +15,10 @@
 
 import unittest
 
-from urbandatasetgateway_client.models.search_urban_datasets200_response import SearchUrbanDatasets200Response
+from urbandatasetgateway_client.models.searching_request200_response import SearchingRequest200Response
 
-class TestSearchUrbanDatasets200Response(unittest.TestCase):
-    """SearchUrbanDatasets200Response unit test stubs"""
+class TestSearchingRequest200Response(unittest.TestCase):
+    """SearchingRequest200Response unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,16 +26,16 @@ class TestSearchUrbanDatasets200Response(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SearchUrbanDatasets200Response:
-        """Test SearchUrbanDatasets200Response
+    def make_instance(self, include_optional) -> SearchingRequest200Response:
+        """Test SearchingRequest200Response
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `SearchUrbanDatasets200Response`
+        # uncomment below to create an instance of `SearchingRequest200Response`
         """
-        model = SearchUrbanDatasets200Response()
+        model = SearchingRequest200Response()
         if include_optional:
-            return SearchUrbanDatasets200Response(
+            return SearchingRequest200Response(
                 code = '',
                 message = '',
                 dataset = [
@@ -92,7 +92,7 @@ class TestSearchUrbanDatasets200Response(unittest.TestCase):
                     ]
             )
         else:
-            return SearchUrbanDatasets200Response(
+            return SearchingRequest200Response(
                 code = '',
                 message = '',
                 dataset = [
@@ -150,8 +150,8 @@ class TestSearchUrbanDatasets200Response(unittest.TestCase):
         )
         """
 
-    def testSearchUrbanDatasets200Response(self):
-        """Test SearchUrbanDatasets200Response"""
+    def testSearchingRequest200Response(self):
+        """Test SearchingRequest200Response"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

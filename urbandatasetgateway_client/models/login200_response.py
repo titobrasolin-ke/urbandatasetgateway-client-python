@@ -23,14 +23,14 @@ from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
-class PushUrbanDataset200Response(BaseModel):
+class Login200Response(BaseModel):
     """
-    PushUrbanDataset200Response
+    Login200Response
     """ # noqa: E501
     code: StrictStr
     message: StrictStr
-    detail: StrictStr
-    __properties: ClassVar[List[str]] = ["code", "message", "detail"]
+    token: StrictStr
+    __properties: ClassVar[List[str]] = ["code", "message", "token"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +50,7 @@ class PushUrbanDataset200Response(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of PushUrbanDataset200Response from a JSON string"""
+        """Create an instance of Login200Response from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,7 +75,7 @@ class PushUrbanDataset200Response(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of PushUrbanDataset200Response from a dict"""
+        """Create an instance of Login200Response from a dict"""
         if obj is None:
             return None
 
@@ -85,7 +85,7 @@ class PushUrbanDataset200Response(BaseModel):
         _obj = cls.model_validate({
             "code": obj.get("code"),
             "message": obj.get("message"),
-            "detail": obj.get("detail")
+            "token": obj.get("token")
         })
         return _obj
 

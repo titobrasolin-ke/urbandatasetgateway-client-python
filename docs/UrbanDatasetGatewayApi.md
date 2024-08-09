@@ -4,152 +4,19 @@ All URIs are relative to *https://kerberos-lab.it/webservices/rest/index.php/Urb
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**do_login**](UrbanDatasetGatewayApi.md#do_login) | **POST** /login | login REST method
-[**do_test**](UrbanDatasetGatewayApi.md#do_test) | **GET** /test | test REST method
-[**push_urban_dataset**](UrbanDatasetGatewayApi.md#push_urban_dataset) | **POST** /push | push REST method
-[**request_last_urban_dataset**](UrbanDatasetGatewayApi.md#request_last_urban_dataset) | **POST** /lastRequest | lastRequest REST method
-[**search_urban_datasets**](UrbanDatasetGatewayApi.md#search_urban_datasets) | **POST** /searchingRequest | searchingRequest REST method
+[**last_request**](UrbanDatasetGatewayApi.md#last_request) | **POST** /lastRequest | lastRequest REST method
+[**login**](UrbanDatasetGatewayApi.md#login) | **POST** /login | login REST method
+[**push**](UrbanDatasetGatewayApi.md#push) | **POST** /push | push REST method
+[**searching_request**](UrbanDatasetGatewayApi.md#searching_request) | **POST** /searchingRequest | searchingRequest REST method
+[**test**](UrbanDatasetGatewayApi.md#test) | **GET** /test | test REST method
 
 
-# **do_login**
-> DoLogin200Response do_login(do_login_request=do_login_request)
+# **last_request**
+> LastRequest200Response last_request(last_request_request=last_request_request)
 
-login REST method
+lastRequest REST method
 
-The \"login\" method allows a client to authenticate itself to the service, by using username and password and receiving a JWT (JSON Web Token) in string format which will use in the subsequent calls.
-
-### Example
-
-
-```python
-import urbandatasetgateway_client
-from urbandatasetgateway_client.models.do_login200_response import DoLogin200Response
-from urbandatasetgateway_client.models.do_login_request import DoLoginRequest
-from urbandatasetgateway_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://kerberos-lab.it/webservices/rest/index.php/UrbanDatasetGateway
-# See configuration.py for a list of all supported configuration parameters.
-configuration = urbandatasetgateway_client.Configuration(
-    host = "https://kerberos-lab.it/webservices/rest/index.php/UrbanDatasetGateway"
-)
-
-
-# Enter a context with an instance of the API client
-with urbandatasetgateway_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = urbandatasetgateway_client.UrbanDatasetGatewayApi(api_client)
-    do_login_request = {"username":"myusername","password":"mypassword"} # DoLoginRequest |  (optional)
-
-    try:
-        # login REST method
-        api_response = api_instance.do_login(do_login_request=do_login_request)
-        print("The response of UrbanDatasetGatewayApi->do_login:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling UrbanDatasetGatewayApi->do_login: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **do_login_request** | [**DoLoginRequest**](DoLoginRequest.md)|  | [optional] 
-
-### Return type
-
-[**DoLogin200Response**](DoLogin200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **do_test**
-> DoTest200Response do_test()
-
-test REST method
-
-The \"test\" method allows a client to test the online presence of the RESTful web service. It is the only web service method that can be retrieved either with a GET and with a POST.
-
-### Example
-
-
-```python
-import urbandatasetgateway_client
-from urbandatasetgateway_client.models.do_test200_response import DoTest200Response
-from urbandatasetgateway_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://kerberos-lab.it/webservices/rest/index.php/UrbanDatasetGateway
-# See configuration.py for a list of all supported configuration parameters.
-configuration = urbandatasetgateway_client.Configuration(
-    host = "https://kerberos-lab.it/webservices/rest/index.php/UrbanDatasetGateway"
-)
-
-
-# Enter a context with an instance of the API client
-with urbandatasetgateway_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = urbandatasetgateway_client.UrbanDatasetGatewayApi(api_client)
-
-    try:
-        # test REST method
-        api_response = api_instance.do_test()
-        print("The response of UrbanDatasetGatewayApi->do_test:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling UrbanDatasetGatewayApi->do_test: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**DoTest200Response**](DoTest200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **push_urban_dataset**
-> PushUrbanDataset200Response push_urban_dataset(push_urban_dataset_request=push_urban_dataset_request)
-
-push REST method
-
-The \"push\" method allows a client to send an UrbanDataset through a single PUSH call.
+The \"lastRequest\" method allows you to request the last UrbanDataset generated through a REQUEST / RESPONSE call.
 
 ### Example
 
@@ -157,8 +24,8 @@ The \"push\" method allows a client to send an UrbanDataset through a single PUS
 
 ```python
 import urbandatasetgateway_client
-from urbandatasetgateway_client.models.push_urban_dataset200_response import PushUrbanDataset200Response
-from urbandatasetgateway_client.models.push_urban_dataset_request import PushUrbanDatasetRequest
+from urbandatasetgateway_client.models.last_request200_response import LastRequest200Response
+from urbandatasetgateway_client.models.last_request_request import LastRequestRequest
 from urbandatasetgateway_client.rest import ApiException
 from pprint import pprint
 
@@ -182,15 +49,15 @@ configuration = urbandatasetgateway_client.Configuration(
 with urbandatasetgateway_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = urbandatasetgateway_client.UrbanDatasetGatewayApi(api_client)
-    push_urban_dataset_request = urbandatasetgateway_client.PushUrbanDatasetRequest() # PushUrbanDatasetRequest |  (optional)
+    last_request_request = {"resource_id":"SCP-1_SmartBuildingCasaccia-3_SmartBuildingAnomalies-1.0_20180125120000"} # LastRequestRequest |  (optional)
 
     try:
-        # push REST method
-        api_response = api_instance.push_urban_dataset(push_urban_dataset_request=push_urban_dataset_request)
-        print("The response of UrbanDatasetGatewayApi->push_urban_dataset:\n")
+        # lastRequest REST method
+        api_response = api_instance.last_request(last_request_request=last_request_request)
+        print("The response of UrbanDatasetGatewayApi->last_request:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UrbanDatasetGatewayApi->push_urban_dataset: %s\n" % e)
+        print("Exception when calling UrbanDatasetGatewayApi->last_request: %s\n" % e)
 ```
 
 
@@ -200,11 +67,159 @@ with urbandatasetgateway_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **push_urban_dataset_request** | [**PushUrbanDatasetRequest**](PushUrbanDatasetRequest.md)|  | [optional] 
+ **last_request_request** | [**LastRequestRequest**](LastRequestRequest.md)|  | [optional] 
 
 ### Return type
 
-[**PushUrbanDataset200Response**](PushUrbanDataset200Response.md)
+[**LastRequest200Response**](LastRequest200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **login**
+> Login200Response login(login_request=login_request)
+
+login REST method
+
+The \"login\" method allows a client to authenticate itself to the service, by using username and password and receiving a JWT (JSON Web Token) in string format which will use in the subsequent calls.
+
+### Example
+
+
+```python
+import urbandatasetgateway_client
+from urbandatasetgateway_client.models.login200_response import Login200Response
+from urbandatasetgateway_client.models.login_request import LoginRequest
+from urbandatasetgateway_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://kerberos-lab.it/webservices/rest/index.php/UrbanDatasetGateway
+# See configuration.py for a list of all supported configuration parameters.
+configuration = urbandatasetgateway_client.Configuration(
+    host = "https://kerberos-lab.it/webservices/rest/index.php/UrbanDatasetGateway"
+)
+
+
+# Enter a context with an instance of the API client
+with urbandatasetgateway_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = urbandatasetgateway_client.UrbanDatasetGatewayApi(api_client)
+    login_request = {"username":"myusername","password":"mypassword"} # LoginRequest |  (optional)
+
+    try:
+        # login REST method
+        api_response = api_instance.login(login_request=login_request)
+        print("The response of UrbanDatasetGatewayApi->login:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UrbanDatasetGatewayApi->login: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **login_request** | [**LoginRequest**](LoginRequest.md)|  | [optional] 
+
+### Return type
+
+[**Login200Response**](Login200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **push**
+> Push200Response push(push_request=push_request)
+
+push REST method
+
+The \"push\" method allows a client to send an UrbanDataset through a single PUSH call.
+
+### Example
+
+* Bearer (JWT) Authentication (bearerAuth):
+
+```python
+import urbandatasetgateway_client
+from urbandatasetgateway_client.models.push200_response import Push200Response
+from urbandatasetgateway_client.models.push_request import PushRequest
+from urbandatasetgateway_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://kerberos-lab.it/webservices/rest/index.php/UrbanDatasetGateway
+# See configuration.py for a list of all supported configuration parameters.
+configuration = urbandatasetgateway_client.Configuration(
+    host = "https://kerberos-lab.it/webservices/rest/index.php/UrbanDatasetGateway"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = urbandatasetgateway_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with urbandatasetgateway_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = urbandatasetgateway_client.UrbanDatasetGatewayApi(api_client)
+    push_request = urbandatasetgateway_client.PushRequest() # PushRequest |  (optional)
+
+    try:
+        # push REST method
+        api_response = api_instance.push(push_request=push_request)
+        print("The response of UrbanDatasetGatewayApi->push:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UrbanDatasetGatewayApi->push: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **push_request** | [**PushRequest**](PushRequest.md)|  | [optional] 
+
+### Return type
+
+[**Push200Response**](Push200Response.md)
 
 ### Authorization
 
@@ -223,12 +238,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **request_last_urban_dataset**
-> RequestLastUrbanDataset200Response request_last_urban_dataset(request_last_urban_dataset_request=request_last_urban_dataset_request)
+# **searching_request**
+> SearchingRequest200Response searching_request(searching_request_request=searching_request_request)
 
-lastRequest REST method
+searchingRequest REST method
 
-The \"lastRequest\" method allows you to request the last UrbanDataset generated through a REQUEST / RESPONSE call.
+The \"searchingRequest\" method allows a client to request one or more UrbanDatasets through a REQUEST/RESPONSE call, providing the identifier of the resource, with search filters like geographical coordinates and period at the context level (contextualization element in the UrbanDataset format).  With all optional parameters set to null, it achieves the same result as a basicRequest.
 
 ### Example
 
@@ -236,8 +251,8 @@ The \"lastRequest\" method allows you to request the last UrbanDataset generated
 
 ```python
 import urbandatasetgateway_client
-from urbandatasetgateway_client.models.request_last_urban_dataset200_response import RequestLastUrbanDataset200Response
-from urbandatasetgateway_client.models.request_last_urban_dataset_request import RequestLastUrbanDatasetRequest
+from urbandatasetgateway_client.models.searching_request200_response import SearchingRequest200Response
+from urbandatasetgateway_client.models.searching_request_request import SearchingRequestRequest
 from urbandatasetgateway_client.rest import ApiException
 from pprint import pprint
 
@@ -261,15 +276,15 @@ configuration = urbandatasetgateway_client.Configuration(
 with urbandatasetgateway_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = urbandatasetgateway_client.UrbanDatasetGatewayApi(api_client)
-    request_last_urban_dataset_request = {"resource_id":"SCP-1_SmartBuildingCasaccia-3_SmartBuildingAnomalies-1.0_20180125120000"} # RequestLastUrbanDatasetRequest |  (optional)
+    searching_request_request = {"resource_id":"SCP-1_SmartBuildingCasaccia-3_SmartBuildingAnomalies-1.0_20180125120000"} # SearchingRequestRequest |  (optional)
 
     try:
-        # lastRequest REST method
-        api_response = api_instance.request_last_urban_dataset(request_last_urban_dataset_request=request_last_urban_dataset_request)
-        print("The response of UrbanDatasetGatewayApi->request_last_urban_dataset:\n")
+        # searchingRequest REST method
+        api_response = api_instance.searching_request(searching_request_request=searching_request_request)
+        print("The response of UrbanDatasetGatewayApi->searching_request:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UrbanDatasetGatewayApi->request_last_urban_dataset: %s\n" % e)
+        print("Exception when calling UrbanDatasetGatewayApi->searching_request: %s\n" % e)
 ```
 
 
@@ -279,11 +294,11 @@ with urbandatasetgateway_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request_last_urban_dataset_request** | [**RequestLastUrbanDatasetRequest**](RequestLastUrbanDatasetRequest.md)|  | [optional] 
+ **searching_request_request** | [**SearchingRequestRequest**](SearchingRequestRequest.md)|  | [optional] 
 
 ### Return type
 
-[**RequestLastUrbanDataset200Response**](RequestLastUrbanDataset200Response.md)
+[**SearchingRequest200Response**](SearchingRequest200Response.md)
 
 ### Authorization
 
@@ -302,21 +317,19 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_urban_datasets**
-> SearchUrbanDatasets200Response search_urban_datasets(search_urban_datasets_request=search_urban_datasets_request)
+# **test**
+> Test200Response test()
 
-searchingRequest REST method
+test REST method
 
-The \"searchingRequest\" method allows a client to request one or more UrbanDatasets through a REQUEST/RESPONSE call, providing the identifier of the resource, with search filters like geographical coordinates and period at the context level (contextualization element in the UrbanDataset format).  With all optional parameters set to null, it achieves the same result as a basicRequest.
+The \"test\" method allows a client to test the online presence of the RESTful web service. It is the only web service method that can be retrieved either with a GET and with a POST.
 
 ### Example
 
-* Bearer (JWT) Authentication (bearerAuth):
 
 ```python
 import urbandatasetgateway_client
-from urbandatasetgateway_client.models.search_urban_datasets200_response import SearchUrbanDatasets200Response
-from urbandatasetgateway_client.models.search_urban_datasets_request import SearchUrbanDatasetsRequest
+from urbandatasetgateway_client.models.test200_response import Test200Response
 from urbandatasetgateway_client.rest import ApiException
 from pprint import pprint
 
@@ -326,51 +339,38 @@ configuration = urbandatasetgateway_client.Configuration(
     host = "https://kerberos-lab.it/webservices/rest/index.php/UrbanDatasetGateway"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization (JWT): bearerAuth
-configuration = urbandatasetgateway_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
 
 # Enter a context with an instance of the API client
 with urbandatasetgateway_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = urbandatasetgateway_client.UrbanDatasetGatewayApi(api_client)
-    search_urban_datasets_request = {"resource_id":"SCP-1_SmartBuildingCasaccia-3_SmartBuildingAnomalies-1.0_20180125120000"} # SearchUrbanDatasetsRequest |  (optional)
 
     try:
-        # searchingRequest REST method
-        api_response = api_instance.search_urban_datasets(search_urban_datasets_request=search_urban_datasets_request)
-        print("The response of UrbanDatasetGatewayApi->search_urban_datasets:\n")
+        # test REST method
+        api_response = api_instance.test()
+        print("The response of UrbanDatasetGatewayApi->test:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UrbanDatasetGatewayApi->search_urban_datasets: %s\n" % e)
+        print("Exception when calling UrbanDatasetGatewayApi->test: %s\n" % e)
 ```
 
 
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **search_urban_datasets_request** | [**SearchUrbanDatasetsRequest**](SearchUrbanDatasetsRequest.md)|  | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**SearchUrbanDatasets200Response**](SearchUrbanDatasets200Response.md)
+[**Test200Response**](Test200Response.md)
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

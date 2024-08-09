@@ -20,17 +20,18 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List
+from urbandatasetgateway_client.models.scps_urbandataset_schema20 import ScpsUrbandatasetSchema20
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DoLogin200Response(BaseModel):
+class LastRequest200Response(BaseModel):
     """
-    DoLogin200Response
+    LastRequest200Response
     """ # noqa: E501
     code: StrictStr
     message: StrictStr
-    token: StrictStr
-    __properties: ClassVar[List[str]] = ["code", "message", "token"]
+    dataset: ScpsUrbandatasetSchema20
+    __properties: ClassVar[List[str]] = ["code", "message", "dataset"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +51,7 @@ class DoLogin200Response(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DoLogin200Response from a JSON string"""
+        """Create an instance of LastRequest200Response from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,11 +72,14 @@ class DoLogin200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of dataset
+        if self.dataset:
+            _dict['dataset'] = self.dataset.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DoLogin200Response from a dict"""
+        """Create an instance of LastRequest200Response from a dict"""
         if obj is None:
             return None
 
@@ -85,7 +89,7 @@ class DoLogin200Response(BaseModel):
         _obj = cls.model_validate({
             "code": obj.get("code"),
             "message": obj.get("message"),
-            "token": obj.get("token")
+            "dataset": ScpsUrbandatasetSchema20.from_dict(obj["dataset"]) if obj.get("dataset") is not None else None
         })
         return _obj
 

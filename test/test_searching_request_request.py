@@ -15,10 +15,10 @@
 
 import unittest
 
-from urbandatasetgateway_client.models.request_last_urban_dataset_request import RequestLastUrbanDatasetRequest
+from urbandatasetgateway_client.models.searching_request_request import SearchingRequestRequest
 
-class TestRequestLastUrbanDatasetRequest(unittest.TestCase):
-    """RequestLastUrbanDatasetRequest unit test stubs"""
+class TestSearchingRequestRequest(unittest.TestCase):
+    """SearchingRequestRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,26 +26,31 @@ class TestRequestLastUrbanDatasetRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> RequestLastUrbanDatasetRequest:
-        """Test RequestLastUrbanDatasetRequest
+    def make_instance(self, include_optional) -> SearchingRequestRequest:
+        """Test SearchingRequestRequest
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `RequestLastUrbanDatasetRequest`
+        # uncomment below to create an instance of `SearchingRequestRequest`
         """
-        model = RequestLastUrbanDatasetRequest()
+        model = SearchingRequestRequest()
         if include_optional:
-            return RequestLastUrbanDatasetRequest(
-                resource_id = ''
+            return SearchingRequestRequest(
+                resource_id = '',
+                period_start = '',
+                period_end = '',
+                center_latitude = '',
+                center_longitude = '',
+                distance = ''
             )
         else:
-            return RequestLastUrbanDatasetRequest(
+            return SearchingRequestRequest(
                 resource_id = '',
         )
         """
 
-    def testRequestLastUrbanDatasetRequest(self):
-        """Test RequestLastUrbanDatasetRequest"""
+    def testSearchingRequestRequest(self):
+        """Test SearchingRequestRequest"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

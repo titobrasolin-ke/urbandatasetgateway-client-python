@@ -15,10 +15,10 @@
 
 import unittest
 
-from urbandatasetgateway_client.models.request_last_urban_dataset200_response import RequestLastUrbanDataset200Response
+from urbandatasetgateway_client.models.last_request200_response import LastRequest200Response
 
-class TestRequestLastUrbanDataset200Response(unittest.TestCase):
-    """RequestLastUrbanDataset200Response unit test stubs"""
+class TestLastRequest200Response(unittest.TestCase):
+    """LastRequest200Response unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,16 +26,16 @@ class TestRequestLastUrbanDataset200Response(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> RequestLastUrbanDataset200Response:
-        """Test RequestLastUrbanDataset200Response
+    def make_instance(self, include_optional) -> LastRequest200Response:
+        """Test LastRequest200Response
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `RequestLastUrbanDataset200Response`
+        # uncomment below to create an instance of `LastRequest200Response`
         """
-        model = RequestLastUrbanDataset200Response()
+        model = LastRequest200Response()
         if include_optional:
-            return RequestLastUrbanDataset200Response(
+            return LastRequest200Response(
                 code = '',
                 message = '',
                 dataset = urbandatasetgateway_client.models.scps_urbandataset_schema_2/0.scps-urbandataset-schema-2.0(
@@ -90,7 +90,7 @@ class TestRequestLastUrbanDataset200Response(unittest.TestCase):
                                 ], ), ), )
             )
         else:
-            return RequestLastUrbanDataset200Response(
+            return LastRequest200Response(
                 code = '',
                 message = '',
                 dataset = urbandatasetgateway_client.models.scps_urbandataset_schema_2/0.scps-urbandataset-schema-2.0(
@@ -146,8 +146,8 @@ class TestRequestLastUrbanDataset200Response(unittest.TestCase):
         )
         """
 
-    def testRequestLastUrbanDataset200Response(self):
-        """Test RequestLastUrbanDataset200Response"""
+    def testLastRequest200Response(self):
+        """Test LastRequest200Response"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

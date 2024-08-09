@@ -15,10 +15,10 @@
 
 import unittest
 
-from urbandatasetgateway_client.models.do_login200_response import DoLogin200Response
+from urbandatasetgateway_client.models.login200_response import Login200Response
 
-class TestDoLogin200Response(unittest.TestCase):
-    """DoLogin200Response unit test stubs"""
+class TestLogin200Response(unittest.TestCase):
+    """Login200Response unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,30 +26,30 @@ class TestDoLogin200Response(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DoLogin200Response:
-        """Test DoLogin200Response
+    def make_instance(self, include_optional) -> Login200Response:
+        """Test Login200Response
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `DoLogin200Response`
+        # uncomment below to create an instance of `Login200Response`
         """
-        model = DoLogin200Response()
+        model = Login200Response()
         if include_optional:
-            return DoLogin200Response(
+            return Login200Response(
                 code = '',
                 message = '',
                 token = ''
             )
         else:
-            return DoLogin200Response(
+            return Login200Response(
                 code = '',
                 message = '',
                 token = '',
         )
         """
 
-    def testDoLogin200Response(self):
-        """Test DoLogin200Response"""
+    def testLogin200Response(self):
+        """Test Login200Response"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

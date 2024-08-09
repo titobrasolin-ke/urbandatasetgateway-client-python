@@ -63,21 +63,30 @@ configuration = urbandatasetgateway_client.Configuration(
     host = "https://kerberos-lab.it/webservices/rest/index.php/UrbanDatasetGateway"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = urbandatasetgateway_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 
 # Enter a context with an instance of the API client
 with urbandatasetgateway_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = urbandatasetgateway_client.UrbanDatasetGatewayApi(api_client)
-    do_login_request = {"username":"myusername","password":"mypassword"} # DoLoginRequest |  (optional)
+    last_request_request = {"resource_id":"SCP-1_SmartBuildingCasaccia-3_SmartBuildingAnomalies-1.0_20180125120000"} # LastRequestRequest |  (optional)
 
     try:
-        # login REST method
-        api_response = api_instance.do_login(do_login_request=do_login_request)
-        print("The response of UrbanDatasetGatewayApi->do_login:\n")
+        # lastRequest REST method
+        api_response = api_instance.last_request(last_request_request=last_request_request)
+        print("The response of UrbanDatasetGatewayApi->last_request:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling UrbanDatasetGatewayApi->do_login: %s\n" % e)
+        print("Exception when calling UrbanDatasetGatewayApi->last_request: %s\n" % e)
 
 ```
 
@@ -87,22 +96,21 @@ All URIs are relative to *https://kerberos-lab.it/webservices/rest/index.php/Urb
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*UrbanDatasetGatewayApi* | [**do_login**](docs/UrbanDatasetGatewayApi.md#do_login) | **POST** /login | login REST method
-*UrbanDatasetGatewayApi* | [**do_test**](docs/UrbanDatasetGatewayApi.md#do_test) | **GET** /test | test REST method
-*UrbanDatasetGatewayApi* | [**push_urban_dataset**](docs/UrbanDatasetGatewayApi.md#push_urban_dataset) | **POST** /push | push REST method
-*UrbanDatasetGatewayApi* | [**request_last_urban_dataset**](docs/UrbanDatasetGatewayApi.md#request_last_urban_dataset) | **POST** /lastRequest | lastRequest REST method
-*UrbanDatasetGatewayApi* | [**search_urban_datasets**](docs/UrbanDatasetGatewayApi.md#search_urban_datasets) | **POST** /searchingRequest | searchingRequest REST method
+*UrbanDatasetGatewayApi* | [**last_request**](docs/UrbanDatasetGatewayApi.md#last_request) | **POST** /lastRequest | lastRequest REST method
+*UrbanDatasetGatewayApi* | [**login**](docs/UrbanDatasetGatewayApi.md#login) | **POST** /login | login REST method
+*UrbanDatasetGatewayApi* | [**push**](docs/UrbanDatasetGatewayApi.md#push) | **POST** /push | push REST method
+*UrbanDatasetGatewayApi* | [**searching_request**](docs/UrbanDatasetGatewayApi.md#searching_request) | **POST** /searchingRequest | searchingRequest REST method
+*UrbanDatasetGatewayApi* | [**test**](docs/UrbanDatasetGatewayApi.md#test) | **GET** /test | test REST method
 
 
 ## Documentation For Models
 
- - [DoLogin200Response](docs/DoLogin200Response.md)
- - [DoLoginRequest](docs/DoLoginRequest.md)
- - [DoTest200Response](docs/DoTest200Response.md)
- - [PushUrbanDataset200Response](docs/PushUrbanDataset200Response.md)
- - [PushUrbanDatasetRequest](docs/PushUrbanDatasetRequest.md)
- - [RequestLastUrbanDataset200Response](docs/RequestLastUrbanDataset200Response.md)
- - [RequestLastUrbanDatasetRequest](docs/RequestLastUrbanDatasetRequest.md)
+ - [LastRequest200Response](docs/LastRequest200Response.md)
+ - [LastRequestRequest](docs/LastRequestRequest.md)
+ - [Login200Response](docs/Login200Response.md)
+ - [LoginRequest](docs/LoginRequest.md)
+ - [Push200Response](docs/Push200Response.md)
+ - [PushRequest](docs/PushRequest.md)
  - [ScpsUrbandatasetSchema20](docs/ScpsUrbandatasetSchema20.md)
  - [ScpsUrbandatasetSchema20UrbanDataset](docs/ScpsUrbandatasetSchema20UrbanDataset.md)
  - [ScpsUrbandatasetSchema20UrbanDatasetContext](docs/ScpsUrbandatasetSchema20UrbanDatasetContext.md)
@@ -119,8 +127,9 @@ Class | Method | HTTP request | Description
  - [ScpsUrbandatasetSchema20UrbanDatasetValuesLineInnerPeriod](docs/ScpsUrbandatasetSchema20UrbanDatasetValuesLineInnerPeriod.md)
  - [ScpsUrbandatasetSchema20UrbanDatasetValuesLineInnerPropertyInner](docs/ScpsUrbandatasetSchema20UrbanDatasetValuesLineInnerPropertyInner.md)
  - [ScpsUrbandatasetSchema20UrbanDatasetValuesLineInnerPropertyInnerPropertyInner](docs/ScpsUrbandatasetSchema20UrbanDatasetValuesLineInnerPropertyInnerPropertyInner.md)
- - [SearchUrbanDatasets200Response](docs/SearchUrbanDatasets200Response.md)
- - [SearchUrbanDatasetsRequest](docs/SearchUrbanDatasetsRequest.md)
+ - [SearchingRequest200Response](docs/SearchingRequest200Response.md)
+ - [SearchingRequestRequest](docs/SearchingRequestRequest.md)
+ - [Test200Response](docs/Test200Response.md)
 
 
 <a id="documentation-for-authorization"></a>

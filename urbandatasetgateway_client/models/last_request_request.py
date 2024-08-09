@@ -18,18 +18,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DoTest200Response(BaseModel):
+class LastRequestRequest(BaseModel):
     """
-    DoTest200Response
+    LastRequestRequest
     """ # noqa: E501
-    code: StrictStr
-    message: StrictStr
-    __properties: ClassVar[List[str]] = ["code", "message"]
+    resource_id: StrictStr = Field(description="Uniquely identifies an UrbanDataset produced by a specific Solution producer (syntax defined in the SCPS Collaboration 2.0)")
+    __properties: ClassVar[List[str]] = ["resource_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +48,7 @@ class DoTest200Response(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DoTest200Response from a JSON string"""
+        """Create an instance of LastRequestRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,7 +73,7 @@ class DoTest200Response(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DoTest200Response from a dict"""
+        """Create an instance of LastRequestRequest from a dict"""
         if obj is None:
             return None
 
@@ -82,8 +81,7 @@ class DoTest200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "code": obj.get("code"),
-            "message": obj.get("message")
+            "resource_id": obj.get("resource_id")
         })
         return _obj
 

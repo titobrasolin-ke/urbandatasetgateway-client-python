@@ -18,19 +18,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List
-from urbandatasetgateway_client.models.scps_urbandataset_schema20 import ScpsUrbandatasetSchema20
 from typing import Optional, Set
 from typing_extensions import Self
 
-class PushUrbanDatasetRequest(BaseModel):
+class Push200Response(BaseModel):
     """
-    PushUrbanDatasetRequest
+    Push200Response
     """ # noqa: E501
-    resource_id: StrictStr = Field(description="Uniquely identifies an UrbanDataset produced by a specific Solution producer (syntax defined in the SCPS Collaboration 2.0)")
-    dataset: ScpsUrbandatasetSchema20
-    __properties: ClassVar[List[str]] = ["resource_id", "dataset"]
+    code: StrictStr
+    message: StrictStr
+    detail: StrictStr
+    __properties: ClassVar[List[str]] = ["code", "message", "detail"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +50,7 @@ class PushUrbanDatasetRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of PushUrbanDatasetRequest from a JSON string"""
+        """Create an instance of Push200Response from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,14 +71,11 @@ class PushUrbanDatasetRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of dataset
-        if self.dataset:
-            _dict['dataset'] = self.dataset.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of PushUrbanDatasetRequest from a dict"""
+        """Create an instance of Push200Response from a dict"""
         if obj is None:
             return None
 
@@ -86,8 +83,9 @@ class PushUrbanDatasetRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "resource_id": obj.get("resource_id"),
-            "dataset": ScpsUrbandatasetSchema20.from_dict(obj["dataset"]) if obj.get("dataset") is not None else None
+            "code": obj.get("code"),
+            "message": obj.get("message"),
+            "detail": obj.get("detail")
         })
         return _obj
 

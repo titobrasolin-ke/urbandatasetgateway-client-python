@@ -18,18 +18,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
+from urbandatasetgateway_client.models.scps_urbandataset_schema20 import ScpsUrbandatasetSchema20
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DoLoginRequest(BaseModel):
+class SearchingRequest200Response(BaseModel):
     """
-    DoLoginRequest
+    SearchingRequest200Response
     """ # noqa: E501
-    username: StrictStr
-    password: StrictStr
-    __properties: ClassVar[List[str]] = ["username", "password"]
+    code: StrictStr
+    message: StrictStr
+    dataset: List[ScpsUrbandatasetSchema20] = Field(description="An array of one or more UrbanDatasets, according to the SCPS Information 2.0 specification.")
+    __properties: ClassVar[List[str]] = ["code", "message", "dataset"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +51,7 @@ class DoLoginRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DoLoginRequest from a JSON string"""
+        """Create an instance of SearchingRequest200Response from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -70,11 +72,18 @@ class DoLoginRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in dataset (list)
+        _items = []
+        if self.dataset:
+            for _item in self.dataset:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['dataset'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DoLoginRequest from a dict"""
+        """Create an instance of SearchingRequest200Response from a dict"""
         if obj is None:
             return None
 
@@ -82,8 +91,9 @@ class DoLoginRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "username": obj.get("username"),
-            "password": obj.get("password")
+            "code": obj.get("code"),
+            "message": obj.get("message"),
+            "dataset": [ScpsUrbandatasetSchema20.from_dict(_item) for _item in obj["dataset"]] if obj.get("dataset") is not None else None
         })
         return _obj
 

@@ -15,10 +15,10 @@
 
 import unittest
 
-from urbandatasetgateway_client.models.search_urban_datasets_request import SearchUrbanDatasetsRequest
+from urbandatasetgateway_client.models.test200_response import Test200Response
 
-class TestSearchUrbanDatasetsRequest(unittest.TestCase):
-    """SearchUrbanDatasetsRequest unit test stubs"""
+class TestTest200Response(unittest.TestCase):
+    """Test200Response unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,31 +26,28 @@ class TestSearchUrbanDatasetsRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SearchUrbanDatasetsRequest:
-        """Test SearchUrbanDatasetsRequest
+    def make_instance(self, include_optional) -> Test200Response:
+        """Test Test200Response
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `SearchUrbanDatasetsRequest`
+        # uncomment below to create an instance of `Test200Response`
         """
-        model = SearchUrbanDatasetsRequest()
+        model = Test200Response()
         if include_optional:
-            return SearchUrbanDatasetsRequest(
-                resource_id = '',
-                period_start = '',
-                period_end = '',
-                center_latitude = '',
-                center_longitude = '',
-                distance = ''
+            return Test200Response(
+                code = '',
+                message = ''
             )
         else:
-            return SearchUrbanDatasetsRequest(
-                resource_id = '',
+            return Test200Response(
+                code = '',
+                message = '',
         )
         """
 
-    def testSearchUrbanDatasetsRequest(self):
-        """Test SearchUrbanDatasetsRequest"""
+    def testTest200Response(self):
+        """Test Test200Response"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
