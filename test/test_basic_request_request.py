@@ -15,10 +15,10 @@
 
 import unittest
 
-from urbandatasetgateway_client.models.test200_response import Test200Response
+from urbandatasetgateway_client.models.basic_request_request import BasicRequestRequest
 
-class TestTest200Response(unittest.TestCase):
-    """Test200Response unit test stubs"""
+class TestBasicRequestRequest(unittest.TestCase):
+    """BasicRequestRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,28 +26,26 @@ class TestTest200Response(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Test200Response:
-        """Test Test200Response
+    def make_instance(self, include_optional) -> BasicRequestRequest:
+        """Test BasicRequestRequest
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `Test200Response`
+        # uncomment below to create an instance of `BasicRequestRequest`
         """
-        model = Test200Response()
+        model = BasicRequestRequest()
         if include_optional:
-            return Test200Response(
-                code = '',
-                message = ''
+            return BasicRequestRequest(
+                resource_id = ''
             )
         else:
-            return Test200Response(
-                code = '',
-                message = '',
+            return BasicRequestRequest(
+                resource_id = '',
         )
         """
 
-    def testTest200Response(self):
-        """Test Test200Response"""
+    def testBasicRequestRequest(self):
+        """Test BasicRequestRequest"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

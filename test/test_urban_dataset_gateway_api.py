@@ -27,38 +27,87 @@ class TestUrbanDatasetGatewayApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_basic_request(self) -> None:
+        """Test case for basic_request
+
+        """
+        pass
+
+    def test_deep_searching_request(self) -> None:
+        """Test case for deep_searching_request
+
+        """
+        pass
+
+    def test_delete(self) -> None:
+        """Test case for delete
+
+        """
+        pass
+
+    def test_is_alive(self) -> None:
+        """Test case for is_alive
+
+        """
+        pass
+
     def test_last_request(self) -> None:
         """Test case for last_request
 
-        lastRequest REST method
+        
         """
         pass
 
     def test_login(self) -> None:
         """Test case for login
 
-        login REST method
+        
+        """
+        pass
+
+    def test_logout(self) -> None:
+        """Test case for logout
+
         """
         pass
 
     def test_push(self) -> None:
         """Test case for push
 
-        push REST method
+        
+        """
+        pass
+
+    def test_searching_by_property_request(self) -> None:
+        """Test case for searching_by_property_request
+
         """
         pass
 
     def test_searching_request(self) -> None:
         """Test case for searching_request
 
-        searchingRequest REST method
+        
+        """
+        pass
+
+    def test_specific_request(self) -> None:
+        """Test case for specific_request
+
         """
         pass
 
     def test_test(self) -> None:
         """Test case for test
 
-        test REST method
+        
+        """
+        pass
+
+    def test_test_get(self) -> None:
+        """Test case for test_get
+
+        
         """
         pass
 

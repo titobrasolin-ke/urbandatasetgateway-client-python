@@ -15,10 +15,10 @@
 
 import unittest
 
-from urbandatasetgateway_client.models.searching_request200_response import SearchingRequest200Response
+from urbandatasetgateway_client.models.basic_request200_response import BasicRequest200Response
 
-class TestSearchingRequest200Response(unittest.TestCase):
-    """SearchingRequest200Response unit test stubs"""
+class TestBasicRequest200Response(unittest.TestCase):
+    """BasicRequest200Response unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,16 +26,16 @@ class TestSearchingRequest200Response(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SearchingRequest200Response:
-        """Test SearchingRequest200Response
+    def make_instance(self, include_optional) -> BasicRequest200Response:
+        """Test BasicRequest200Response
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `SearchingRequest200Response`
+        # uncomment below to create an instance of `BasicRequest200Response`
         """
-        model = SearchingRequest200Response()
+        model = BasicRequest200Response()
         if include_optional:
-            return SearchingRequest200Response(
+            return BasicRequest200Response(
                 code = '',
                 message = '',
                 dataset = [
@@ -92,7 +92,7 @@ class TestSearchingRequest200Response(unittest.TestCase):
                     ]
             )
         else:
-            return SearchingRequest200Response(
+            return BasicRequest200Response(
                 code = '',
                 message = '',
                 dataset = [
@@ -150,8 +150,8 @@ class TestSearchingRequest200Response(unittest.TestCase):
         )
         """
 
-    def testSearchingRequest200Response(self):
-        """Test SearchingRequest200Response"""
+    def testBasicRequest200Response(self):
+        """Test BasicRequest200Response"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

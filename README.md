@@ -57,10 +57,10 @@ import urbandatasetgateway_client
 from urbandatasetgateway_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://kerberos-lab.it/webservices/rest/index.php/UrbanDatasetGateway
+# Defining the host is optional and defaults to /UrbanDatasetGateway
 # See configuration.py for a list of all supported configuration parameters.
 configuration = urbandatasetgateway_client.Configuration(
-    host = "https://kerberos-lab.it/webservices/rest/index.php/UrbanDatasetGateway"
+    host = "/UrbanDatasetGateway"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -78,33 +78,44 @@ configuration = urbandatasetgateway_client.Configuration(
 with urbandatasetgateway_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = urbandatasetgateway_client.UrbanDatasetGatewayApi(api_client)
-    last_request_request = {"resource_id":"SCP-1_SmartBuildingCasaccia-3_SmartBuildingAnomalies-1.0_20180125120000"} # LastRequestRequest | 
+    basic_request_request = urbandatasetgateway_client.BasicRequestRequest() # BasicRequestRequest |  (optional)
 
     try:
-        # lastRequest REST method
-        api_response = api_instance.last_request(last_request_request)
-        print("The response of UrbanDatasetGatewayApi->last_request:\n")
+        api_response = api_instance.basic_request(basic_request_request=basic_request_request)
+        print("The response of UrbanDatasetGatewayApi->basic_request:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling UrbanDatasetGatewayApi->last_request: %s\n" % e)
+        print("Exception when calling UrbanDatasetGatewayApi->basic_request: %s\n" % e)
 
 ```
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://kerberos-lab.it/webservices/rest/index.php/UrbanDatasetGateway*
+All URIs are relative to */UrbanDatasetGateway*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*UrbanDatasetGatewayApi* | [**last_request**](docs/UrbanDatasetGatewayApi.md#last_request) | **POST** /lastRequest | lastRequest REST method
-*UrbanDatasetGatewayApi* | [**login**](docs/UrbanDatasetGatewayApi.md#login) | **POST** /login | login REST method
-*UrbanDatasetGatewayApi* | [**push**](docs/UrbanDatasetGatewayApi.md#push) | **POST** /push | push REST method
-*UrbanDatasetGatewayApi* | [**searching_request**](docs/UrbanDatasetGatewayApi.md#searching_request) | **POST** /searchingRequest | searchingRequest REST method
-*UrbanDatasetGatewayApi* | [**test**](docs/UrbanDatasetGatewayApi.md#test) | **GET** /test | test REST method
+*UrbanDatasetGatewayApi* | [**basic_request**](docs/UrbanDatasetGatewayApi.md#basic_request) | **POST** /basicRequest | 
+*UrbanDatasetGatewayApi* | [**deep_searching_request**](docs/UrbanDatasetGatewayApi.md#deep_searching_request) | **POST** /deepSearchingRequest | 
+*UrbanDatasetGatewayApi* | [**delete**](docs/UrbanDatasetGatewayApi.md#delete) | **POST** /delete | 
+*UrbanDatasetGatewayApi* | [**is_alive**](docs/UrbanDatasetGatewayApi.md#is_alive) | **POST** /isAlive | 
+*UrbanDatasetGatewayApi* | [**last_request**](docs/UrbanDatasetGatewayApi.md#last_request) | **POST** /lastRequest | 
+*UrbanDatasetGatewayApi* | [**login**](docs/UrbanDatasetGatewayApi.md#login) | **POST** /login | 
+*UrbanDatasetGatewayApi* | [**logout**](docs/UrbanDatasetGatewayApi.md#logout) | **POST** /logout | 
+*UrbanDatasetGatewayApi* | [**push**](docs/UrbanDatasetGatewayApi.md#push) | **POST** /push | 
+*UrbanDatasetGatewayApi* | [**searching_by_property_request**](docs/UrbanDatasetGatewayApi.md#searching_by_property_request) | **POST** /searchingByPropertyRequest | 
+*UrbanDatasetGatewayApi* | [**searching_request**](docs/UrbanDatasetGatewayApi.md#searching_request) | **POST** /searchingRequest | 
+*UrbanDatasetGatewayApi* | [**specific_request**](docs/UrbanDatasetGatewayApi.md#specific_request) | **POST** /specificRequest | 
+*UrbanDatasetGatewayApi* | [**test**](docs/UrbanDatasetGatewayApi.md#test) | **POST** /test | 
+*UrbanDatasetGatewayApi* | [**test_get**](docs/UrbanDatasetGatewayApi.md#test_get) | **GET** /test | 
 
 
 ## Documentation For Models
 
+ - [BasicRequest200Response](docs/BasicRequest200Response.md)
+ - [BasicRequestRequest](docs/BasicRequestRequest.md)
+ - [DeepSearchingRequestRequest](docs/DeepSearchingRequestRequest.md)
+ - [IsAlive200Response](docs/IsAlive200Response.md)
  - [LastRequest200Response](docs/LastRequest200Response.md)
  - [LastRequestRequest](docs/LastRequestRequest.md)
  - [Login200Response](docs/Login200Response.md)
@@ -127,9 +138,10 @@ Class | Method | HTTP request | Description
  - [ScpsUrbandatasetSchema20UrbanDatasetValuesLineInnerPeriod](docs/ScpsUrbandatasetSchema20UrbanDatasetValuesLineInnerPeriod.md)
  - [ScpsUrbandatasetSchema20UrbanDatasetValuesLineInnerPropertyInner](docs/ScpsUrbandatasetSchema20UrbanDatasetValuesLineInnerPropertyInner.md)
  - [ScpsUrbandatasetSchema20UrbanDatasetValuesLineInnerPropertyInnerPropertyInner](docs/ScpsUrbandatasetSchema20UrbanDatasetValuesLineInnerPropertyInnerPropertyInner.md)
- - [SearchingRequest200Response](docs/SearchingRequest200Response.md)
+ - [SearchingByPropertyRequestRequest](docs/SearchingByPropertyRequestRequest.md)
  - [SearchingRequestRequest](docs/SearchingRequestRequest.md)
- - [Test200Response](docs/Test200Response.md)
+ - [SpecificRequestRequest](docs/SpecificRequestRequest.md)
+ - [TestGet200Response](docs/TestGet200Response.md)
 
 
 <a id="documentation-for-authorization"></a>
