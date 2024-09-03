@@ -23,9 +23,9 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DeepSearchingRequestRequest(BaseModel):
+class DeepSearchingRequest(BaseModel):
     """
-    DeepSearchingRequestRequest
+    DeepSearchingRequest
     """ # noqa: E501
     resource_id: StrictStr = Field(description="Uniquely identifies an UrbanDataset produced by a specific Solution producer (syntax defined in the SCPS Collaboration 2.0)")
     period_start: Optional[StrictStr] = Field(default=None, description="Date and time from which you want to specify the start of a time interval.")
@@ -55,7 +55,7 @@ class DeepSearchingRequestRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DeepSearchingRequestRequest from a JSON string"""
+        """Create an instance of DeepSearchingRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -80,7 +80,7 @@ class DeepSearchingRequestRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DeepSearchingRequestRequest from a dict"""
+        """Create an instance of DeepSearchingRequest from a dict"""
         if obj is None:
             return None
 

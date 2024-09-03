@@ -15,10 +15,10 @@
 
 import unittest
 
-from urbandatasetgateway_client.models.basic_request_request import BasicRequestRequest
+from urbandatasetgateway_client.models.deep_searching_request import DeepSearchingRequest
 
-class TestBasicRequestRequest(unittest.TestCase):
-    """BasicRequestRequest unit test stubs"""
+class TestDeepSearchingRequest(unittest.TestCase):
+    """DeepSearchingRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,26 +26,33 @@ class TestBasicRequestRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> BasicRequestRequest:
-        """Test BasicRequestRequest
+    def make_instance(self, include_optional) -> DeepSearchingRequest:
+        """Test DeepSearchingRequest
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `BasicRequestRequest`
+        # uncomment below to create an instance of `DeepSearchingRequest`
         """
-        model = BasicRequestRequest()
+        model = DeepSearchingRequest()
         if include_optional:
-            return BasicRequestRequest(
-                resource_id = ''
+            return DeepSearchingRequest(
+                resource_id = '',
+                period_start = '',
+                period_end = '',
+                center_latitude = '',
+                center_longitude = '',
+                distance = '',
+                property_label = '',
+                property_value = ''
             )
         else:
-            return BasicRequestRequest(
+            return DeepSearchingRequest(
                 resource_id = '',
         )
         """
 
-    def testBasicRequestRequest(self):
-        """Test BasicRequestRequest"""
+    def testDeepSearchingRequest(self):
+        """Test DeepSearchingRequest"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

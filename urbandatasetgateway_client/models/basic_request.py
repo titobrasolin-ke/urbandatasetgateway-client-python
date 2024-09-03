@@ -18,24 +18,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, StrictStr
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
-class SearchingByPropertyRequestRequest(BaseModel):
+class BasicRequest(BaseModel):
     """
-    SearchingByPropertyRequestRequest
+    BasicRequest
     """ # noqa: E501
-    resource_id: StrictStr = Field(description="Uniquely identifies an UrbanDataset produced by a specific Solution producer (syntax defined in the SCPS Collaboration 2.0)")
-    property_name: StrictStr = Field(description="Name of the property being searched")
-    property_value: StrictStr = Field(description="Value of the property being searched")
-    period_start: Optional[StrictStr] = Field(default=None, description="Date and time from which you want to specify the start of a time interval.")
-    period_end: Optional[StrictStr] = Field(default=None, description="Date and time from which you want to specify the end of a time interval.")
-    center_latitude: Optional[StrictStr] = Field(default=None, description="Latitude of the center where space research will be carried out.")
-    center_longitude: Optional[StrictStr] = Field(default=None, description="Longitude of the center on which space research will be carried out.")
-    distance: Optional[StrictStr] = Field(default=None, description="Radius of the circle, in meters, on which space research will be carried out.")
-    __properties: ClassVar[List[str]] = ["resource_id", "property_name", "property_value", "period_start", "period_end", "center_latitude", "center_longitude", "distance"]
+    resource_id: StrictStr
+    __properties: ClassVar[List[str]] = ["resource_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -55,7 +48,7 @@ class SearchingByPropertyRequestRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of SearchingByPropertyRequestRequest from a JSON string"""
+        """Create an instance of BasicRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -80,7 +73,7 @@ class SearchingByPropertyRequestRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of SearchingByPropertyRequestRequest from a dict"""
+        """Create an instance of BasicRequest from a dict"""
         if obj is None:
             return None
 
@@ -88,14 +81,7 @@ class SearchingByPropertyRequestRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "resource_id": obj.get("resource_id"),
-            "property_name": obj.get("property_name"),
-            "property_value": obj.get("property_value"),
-            "period_start": obj.get("period_start"),
-            "period_end": obj.get("period_end"),
-            "center_latitude": obj.get("center_latitude"),
-            "center_longitude": obj.get("center_longitude"),
-            "distance": obj.get("distance")
+            "resource_id": obj.get("resource_id")
         })
         return _obj
 

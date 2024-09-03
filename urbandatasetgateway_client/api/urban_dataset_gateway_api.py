@@ -19,19 +19,19 @@ from typing_extensions import Annotated
 
 from pydantic import StrictStr
 from typing import Optional
-from urbandatasetgateway_client.models.basic_request200_response import BasicRequest200Response
-from urbandatasetgateway_client.models.basic_request_request import BasicRequestRequest
-from urbandatasetgateway_client.models.deep_searching_request_request import DeepSearchingRequestRequest
+from urbandatasetgateway_client.models.basic200_response import Basic200Response
+from urbandatasetgateway_client.models.basic_request import BasicRequest
+from urbandatasetgateway_client.models.deep_searching_request import DeepSearchingRequest
 from urbandatasetgateway_client.models.is_alive200_response import IsAlive200Response
-from urbandatasetgateway_client.models.last_request200_response import LastRequest200Response
-from urbandatasetgateway_client.models.last_request_request import LastRequestRequest
+from urbandatasetgateway_client.models.last200_response import Last200Response
+from urbandatasetgateway_client.models.last_request import LastRequest
 from urbandatasetgateway_client.models.login200_response import Login200Response
 from urbandatasetgateway_client.models.login_request import LoginRequest
 from urbandatasetgateway_client.models.push200_response import Push200Response
 from urbandatasetgateway_client.models.push_request import PushRequest
-from urbandatasetgateway_client.models.searching_by_property_request_request import SearchingByPropertyRequestRequest
-from urbandatasetgateway_client.models.searching_request_request import SearchingRequestRequest
-from urbandatasetgateway_client.models.specific_request_request import SpecificRequestRequest
+from urbandatasetgateway_client.models.searching_by_property_request import SearchingByPropertyRequest
+from urbandatasetgateway_client.models.searching_request import SearchingRequest
+from urbandatasetgateway_client.models.specific_request import SpecificRequest
 from urbandatasetgateway_client.models.test_get200_response import TestGet200Response
 
 from urbandatasetgateway_client.api_client import ApiClient, RequestSerialized
@@ -53,9 +53,9 @@ class UrbanDatasetGatewayApi:
 
 
     @validate_call
-    def basic_request(
+    def basic(
         self,
-        basic_request_request: Optional[BasicRequestRequest] = None,
+        basic_request: Optional[BasicRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -68,13 +68,13 @@ class UrbanDatasetGatewayApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> BasicRequest200Response:
-        """basic_request
+    ) -> Basic200Response:
+        """basic
 
         The \"basicRequest\" method allows requesting one or more UrbanDatasets via a REQUEST / RESPONSE call without refinement of the search.
 
-        :param basic_request_request:
-        :type basic_request_request: BasicRequestRequest
+        :param basic_request:
+        :type basic_request: BasicRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -97,8 +97,8 @@ class UrbanDatasetGatewayApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._basic_request_serialize(
-            basic_request_request=basic_request_request,
+        _param = self._basic_serialize(
+            basic_request=basic_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -106,7 +106,7 @@ class UrbanDatasetGatewayApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BasicRequest200Response",
+            '200': "Basic200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -120,9 +120,9 @@ class UrbanDatasetGatewayApi:
 
 
     @validate_call
-    def basic_request_with_http_info(
+    def basic_with_http_info(
         self,
-        basic_request_request: Optional[BasicRequestRequest] = None,
+        basic_request: Optional[BasicRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -135,13 +135,13 @@ class UrbanDatasetGatewayApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BasicRequest200Response]:
-        """basic_request
+    ) -> ApiResponse[Basic200Response]:
+        """basic
 
         The \"basicRequest\" method allows requesting one or more UrbanDatasets via a REQUEST / RESPONSE call without refinement of the search.
 
-        :param basic_request_request:
-        :type basic_request_request: BasicRequestRequest
+        :param basic_request:
+        :type basic_request: BasicRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -164,8 +164,8 @@ class UrbanDatasetGatewayApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._basic_request_serialize(
-            basic_request_request=basic_request_request,
+        _param = self._basic_serialize(
+            basic_request=basic_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -173,7 +173,7 @@ class UrbanDatasetGatewayApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BasicRequest200Response",
+            '200': "Basic200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -187,9 +187,9 @@ class UrbanDatasetGatewayApi:
 
 
     @validate_call
-    def basic_request_without_preload_content(
+    def basic_without_preload_content(
         self,
-        basic_request_request: Optional[BasicRequestRequest] = None,
+        basic_request: Optional[BasicRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -203,12 +203,12 @@ class UrbanDatasetGatewayApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """basic_request
+        """basic
 
         The \"basicRequest\" method allows requesting one or more UrbanDatasets via a REQUEST / RESPONSE call without refinement of the search.
 
-        :param basic_request_request:
-        :type basic_request_request: BasicRequestRequest
+        :param basic_request:
+        :type basic_request: BasicRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -231,8 +231,8 @@ class UrbanDatasetGatewayApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._basic_request_serialize(
-            basic_request_request=basic_request_request,
+        _param = self._basic_serialize(
+            basic_request=basic_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -240,7 +240,7 @@ class UrbanDatasetGatewayApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BasicRequest200Response",
+            '200': "Basic200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -249,9 +249,9 @@ class UrbanDatasetGatewayApi:
         return response_data.response
 
 
-    def _basic_request_serialize(
+    def _basic_serialize(
         self,
-        basic_request_request,
+        basic_request,
         _request_auth,
         _content_type,
         _headers,
@@ -275,8 +275,8 @@ class UrbanDatasetGatewayApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if basic_request_request is not None:
-            _body_params = basic_request_request
+        if basic_request is not None:
+            _body_params = basic_request
 
 
         # set the HTTP header `Accept`
@@ -325,9 +325,9 @@ class UrbanDatasetGatewayApi:
 
 
     @validate_call
-    def deep_searching_request(
+    def deep_searching(
         self,
-        deep_searching_request_request: Optional[DeepSearchingRequestRequest] = None,
+        deep_searching_request: Optional[DeepSearchingRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -340,13 +340,13 @@ class UrbanDatasetGatewayApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> BasicRequest200Response:
-        """deep_searching_request
+    ) -> Basic200Response:
+        """deep_searching
 
         The \"deepsearchingrequestrestmethod\" method allows a client to request one or more UrbanDatasets through a REQUEST/RESPONSE call, providing the identifier of the resource, with search filters like geographical coordinates and period at the line level or searching for lines that contain a particular property.  With all optional parameters set to null, it achieves the same result as a basicRequest.
 
-        :param deep_searching_request_request:
-        :type deep_searching_request_request: DeepSearchingRequestRequest
+        :param deep_searching_request:
+        :type deep_searching_request: DeepSearchingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -369,8 +369,8 @@ class UrbanDatasetGatewayApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._deep_searching_request_serialize(
-            deep_searching_request_request=deep_searching_request_request,
+        _param = self._deep_searching_serialize(
+            deep_searching_request=deep_searching_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -378,7 +378,7 @@ class UrbanDatasetGatewayApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BasicRequest200Response",
+            '200': "Basic200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -392,9 +392,9 @@ class UrbanDatasetGatewayApi:
 
 
     @validate_call
-    def deep_searching_request_with_http_info(
+    def deep_searching_with_http_info(
         self,
-        deep_searching_request_request: Optional[DeepSearchingRequestRequest] = None,
+        deep_searching_request: Optional[DeepSearchingRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -407,13 +407,13 @@ class UrbanDatasetGatewayApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BasicRequest200Response]:
-        """deep_searching_request
+    ) -> ApiResponse[Basic200Response]:
+        """deep_searching
 
         The \"deepsearchingrequestrestmethod\" method allows a client to request one or more UrbanDatasets through a REQUEST/RESPONSE call, providing the identifier of the resource, with search filters like geographical coordinates and period at the line level or searching for lines that contain a particular property.  With all optional parameters set to null, it achieves the same result as a basicRequest.
 
-        :param deep_searching_request_request:
-        :type deep_searching_request_request: DeepSearchingRequestRequest
+        :param deep_searching_request:
+        :type deep_searching_request: DeepSearchingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -436,8 +436,8 @@ class UrbanDatasetGatewayApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._deep_searching_request_serialize(
-            deep_searching_request_request=deep_searching_request_request,
+        _param = self._deep_searching_serialize(
+            deep_searching_request=deep_searching_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -445,7 +445,7 @@ class UrbanDatasetGatewayApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BasicRequest200Response",
+            '200': "Basic200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -459,9 +459,9 @@ class UrbanDatasetGatewayApi:
 
 
     @validate_call
-    def deep_searching_request_without_preload_content(
+    def deep_searching_without_preload_content(
         self,
-        deep_searching_request_request: Optional[DeepSearchingRequestRequest] = None,
+        deep_searching_request: Optional[DeepSearchingRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -475,12 +475,12 @@ class UrbanDatasetGatewayApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """deep_searching_request
+        """deep_searching
 
         The \"deepsearchingrequestrestmethod\" method allows a client to request one or more UrbanDatasets through a REQUEST/RESPONSE call, providing the identifier of the resource, with search filters like geographical coordinates and period at the line level or searching for lines that contain a particular property.  With all optional parameters set to null, it achieves the same result as a basicRequest.
 
-        :param deep_searching_request_request:
-        :type deep_searching_request_request: DeepSearchingRequestRequest
+        :param deep_searching_request:
+        :type deep_searching_request: DeepSearchingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -503,8 +503,8 @@ class UrbanDatasetGatewayApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._deep_searching_request_serialize(
-            deep_searching_request_request=deep_searching_request_request,
+        _param = self._deep_searching_serialize(
+            deep_searching_request=deep_searching_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -512,7 +512,7 @@ class UrbanDatasetGatewayApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BasicRequest200Response",
+            '200': "Basic200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -521,9 +521,9 @@ class UrbanDatasetGatewayApi:
         return response_data.response
 
 
-    def _deep_searching_request_serialize(
+    def _deep_searching_serialize(
         self,
-        deep_searching_request_request,
+        deep_searching_request,
         _request_auth,
         _content_type,
         _headers,
@@ -547,8 +547,8 @@ class UrbanDatasetGatewayApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if deep_searching_request_request is not None:
-            _body_params = deep_searching_request_request
+        if deep_searching_request is not None:
+            _body_params = deep_searching_request
 
 
         # set the HTTP header `Accept`
@@ -599,7 +599,7 @@ class UrbanDatasetGatewayApi:
     @validate_call
     def delete(
         self,
-        specific_request_request: Optional[SpecificRequestRequest] = None,
+        specific_request: Optional[SpecificRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -617,8 +617,8 @@ class UrbanDatasetGatewayApi:
 
         The \"delete\" method allows a client to delete a specific UrbanDataset.
 
-        :param specific_request_request: 
-        :type specific_request_request: SpecificRequestRequest
+        :param specific_request: 
+        :type specific_request: SpecificRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -642,7 +642,7 @@ class UrbanDatasetGatewayApi:
         """ # noqa: E501
 
         _param = self._delete_serialize(
-            specific_request_request=specific_request_request,
+            specific_request=specific_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -666,7 +666,7 @@ class UrbanDatasetGatewayApi:
     @validate_call
     def delete_with_http_info(
         self,
-        specific_request_request: Optional[SpecificRequestRequest] = None,
+        specific_request: Optional[SpecificRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -684,8 +684,8 @@ class UrbanDatasetGatewayApi:
 
         The \"delete\" method allows a client to delete a specific UrbanDataset.
 
-        :param specific_request_request: 
-        :type specific_request_request: SpecificRequestRequest
+        :param specific_request: 
+        :type specific_request: SpecificRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -709,7 +709,7 @@ class UrbanDatasetGatewayApi:
         """ # noqa: E501
 
         _param = self._delete_serialize(
-            specific_request_request=specific_request_request,
+            specific_request=specific_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -733,7 +733,7 @@ class UrbanDatasetGatewayApi:
     @validate_call
     def delete_without_preload_content(
         self,
-        specific_request_request: Optional[SpecificRequestRequest] = None,
+        specific_request: Optional[SpecificRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -751,8 +751,8 @@ class UrbanDatasetGatewayApi:
 
         The \"delete\" method allows a client to delete a specific UrbanDataset.
 
-        :param specific_request_request: 
-        :type specific_request_request: SpecificRequestRequest
+        :param specific_request: 
+        :type specific_request: SpecificRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -776,7 +776,7 @@ class UrbanDatasetGatewayApi:
         """ # noqa: E501
 
         _param = self._delete_serialize(
-            specific_request_request=specific_request_request,
+            specific_request=specific_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -795,7 +795,7 @@ class UrbanDatasetGatewayApi:
 
     def _delete_serialize(
         self,
-        specific_request_request,
+        specific_request,
         _request_auth,
         _content_type,
         _headers,
@@ -819,8 +819,8 @@ class UrbanDatasetGatewayApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if specific_request_request is not None:
-            _body_params = specific_request_request
+        if specific_request is not None:
+            _body_params = specific_request
 
 
         # set the HTTP header `Accept`
@@ -1141,9 +1141,9 @@ class UrbanDatasetGatewayApi:
 
 
     @validate_call
-    def last_request(
+    def last(
         self,
-        last_request_request: LastRequestRequest,
+        last_request: LastRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1156,13 +1156,13 @@ class UrbanDatasetGatewayApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> LastRequest200Response:
+    ) -> Last200Response:
         """
 
         The \"lastRequest\" method allows you to request the last UrbanDataset generated through a REQUEST / RESPONSE call.
 
-        :param last_request_request: (required)
-        :type last_request_request: LastRequestRequest
+        :param last_request: (required)
+        :type last_request: LastRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1185,8 +1185,8 @@ class UrbanDatasetGatewayApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._last_request_serialize(
-            last_request_request=last_request_request,
+        _param = self._last_serialize(
+            last_request=last_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1194,7 +1194,7 @@ class UrbanDatasetGatewayApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "LastRequest200Response",
+            '200': "Last200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1208,9 +1208,9 @@ class UrbanDatasetGatewayApi:
 
 
     @validate_call
-    def last_request_with_http_info(
+    def last_with_http_info(
         self,
-        last_request_request: LastRequestRequest,
+        last_request: LastRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1223,13 +1223,13 @@ class UrbanDatasetGatewayApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[LastRequest200Response]:
+    ) -> ApiResponse[Last200Response]:
         """
 
         The \"lastRequest\" method allows you to request the last UrbanDataset generated through a REQUEST / RESPONSE call.
 
-        :param last_request_request: (required)
-        :type last_request_request: LastRequestRequest
+        :param last_request: (required)
+        :type last_request: LastRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1252,8 +1252,8 @@ class UrbanDatasetGatewayApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._last_request_serialize(
-            last_request_request=last_request_request,
+        _param = self._last_serialize(
+            last_request=last_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1261,7 +1261,7 @@ class UrbanDatasetGatewayApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "LastRequest200Response",
+            '200': "Last200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1275,9 +1275,9 @@ class UrbanDatasetGatewayApi:
 
 
     @validate_call
-    def last_request_without_preload_content(
+    def last_without_preload_content(
         self,
-        last_request_request: LastRequestRequest,
+        last_request: LastRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1295,8 +1295,8 @@ class UrbanDatasetGatewayApi:
 
         The \"lastRequest\" method allows you to request the last UrbanDataset generated through a REQUEST / RESPONSE call.
 
-        :param last_request_request: (required)
-        :type last_request_request: LastRequestRequest
+        :param last_request: (required)
+        :type last_request: LastRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1319,8 +1319,8 @@ class UrbanDatasetGatewayApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._last_request_serialize(
-            last_request_request=last_request_request,
+        _param = self._last_serialize(
+            last_request=last_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1328,7 +1328,7 @@ class UrbanDatasetGatewayApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "LastRequest200Response",
+            '200': "Last200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1337,9 +1337,9 @@ class UrbanDatasetGatewayApi:
         return response_data.response
 
 
-    def _last_request_serialize(
+    def _last_serialize(
         self,
-        last_request_request,
+        last_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1363,8 +1363,8 @@ class UrbanDatasetGatewayApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if last_request_request is not None:
-            _body_params = last_request_request
+        if last_request is not None:
+            _body_params = last_request
 
 
         # set the HTTP header `Accept`
@@ -2228,9 +2228,9 @@ class UrbanDatasetGatewayApi:
 
 
     @validate_call
-    def searching_by_property_request(
+    def searching(
         self,
-        searching_by_property_request_request: Optional[SearchingByPropertyRequestRequest] = None,
+        searching_request: SearchingRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2243,13 +2243,13 @@ class UrbanDatasetGatewayApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> BasicRequest200Response:
-        """searching_by_property_request
+    ) -> Basic200Response:
+        """
 
-        
+        The \"searchingRequest\" method allows a client to request one or more UrbanDatasets through a REQUEST/RESPONSE call, providing the identifier of the resource, with search filters like geographical coordinates and period at the context level (contextualization element in the UrbanDataset format).  With all optional parameters set to null, it achieves the same result as a basicRequest.
 
-        :param searching_by_property_request_request:
-        :type searching_by_property_request_request: SearchingByPropertyRequestRequest
+        :param searching_request: (required)
+        :type searching_request: SearchingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2272,8 +2272,8 @@ class UrbanDatasetGatewayApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._searching_by_property_request_serialize(
-            searching_by_property_request_request=searching_by_property_request_request,
+        _param = self._searching_serialize(
+            searching_request=searching_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2281,7 +2281,7 @@ class UrbanDatasetGatewayApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BasicRequest200Response",
+            '200': "Basic200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2295,9 +2295,9 @@ class UrbanDatasetGatewayApi:
 
 
     @validate_call
-    def searching_by_property_request_with_http_info(
+    def searching_with_http_info(
         self,
-        searching_by_property_request_request: Optional[SearchingByPropertyRequestRequest] = None,
+        searching_request: SearchingRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2310,13 +2310,13 @@ class UrbanDatasetGatewayApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BasicRequest200Response]:
-        """searching_by_property_request
+    ) -> ApiResponse[Basic200Response]:
+        """
 
-        
+        The \"searchingRequest\" method allows a client to request one or more UrbanDatasets through a REQUEST/RESPONSE call, providing the identifier of the resource, with search filters like geographical coordinates and period at the context level (contextualization element in the UrbanDataset format).  With all optional parameters set to null, it achieves the same result as a basicRequest.
 
-        :param searching_by_property_request_request:
-        :type searching_by_property_request_request: SearchingByPropertyRequestRequest
+        :param searching_request: (required)
+        :type searching_request: SearchingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2339,8 +2339,8 @@ class UrbanDatasetGatewayApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._searching_by_property_request_serialize(
-            searching_by_property_request_request=searching_by_property_request_request,
+        _param = self._searching_serialize(
+            searching_request=searching_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2348,7 +2348,7 @@ class UrbanDatasetGatewayApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BasicRequest200Response",
+            '200': "Basic200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2362,9 +2362,9 @@ class UrbanDatasetGatewayApi:
 
 
     @validate_call
-    def searching_by_property_request_without_preload_content(
+    def searching_without_preload_content(
         self,
-        searching_by_property_request_request: Optional[SearchingByPropertyRequestRequest] = None,
+        searching_request: SearchingRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2378,12 +2378,12 @@ class UrbanDatasetGatewayApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """searching_by_property_request
+        """
 
-        
+        The \"searchingRequest\" method allows a client to request one or more UrbanDatasets through a REQUEST/RESPONSE call, providing the identifier of the resource, with search filters like geographical coordinates and period at the context level (contextualization element in the UrbanDataset format).  With all optional parameters set to null, it achieves the same result as a basicRequest.
 
-        :param searching_by_property_request_request:
-        :type searching_by_property_request_request: SearchingByPropertyRequestRequest
+        :param searching_request: (required)
+        :type searching_request: SearchingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2406,8 +2406,8 @@ class UrbanDatasetGatewayApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._searching_by_property_request_serialize(
-            searching_by_property_request_request=searching_by_property_request_request,
+        _param = self._searching_serialize(
+            searching_request=searching_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2415,7 +2415,7 @@ class UrbanDatasetGatewayApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BasicRequest200Response",
+            '200': "Basic200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2424,9 +2424,9 @@ class UrbanDatasetGatewayApi:
         return response_data.response
 
 
-    def _searching_by_property_request_serialize(
+    def _searching_serialize(
         self,
-        searching_by_property_request_request,
+        searching_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2450,280 +2450,8 @@ class UrbanDatasetGatewayApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if searching_by_property_request_request is not None:
-            _body_params = searching_by_property_request_request
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'bearerAuth'
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/searchingByPropertyRequest',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def searching_request(
-        self,
-        searching_request_request: SearchingRequestRequest,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> BasicRequest200Response:
-        """
-
-        The \"searchingRequest\" method allows a client to request one or more UrbanDatasets through a REQUEST/RESPONSE call, providing the identifier of the resource, with search filters like geographical coordinates and period at the context level (contextualization element in the UrbanDataset format).  With all optional parameters set to null, it achieves the same result as a basicRequest.
-
-        :param searching_request_request: (required)
-        :type searching_request_request: SearchingRequestRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._searching_request_serialize(
-            searching_request_request=searching_request_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BasicRequest200Response",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def searching_request_with_http_info(
-        self,
-        searching_request_request: SearchingRequestRequest,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BasicRequest200Response]:
-        """
-
-        The \"searchingRequest\" method allows a client to request one or more UrbanDatasets through a REQUEST/RESPONSE call, providing the identifier of the resource, with search filters like geographical coordinates and period at the context level (contextualization element in the UrbanDataset format).  With all optional parameters set to null, it achieves the same result as a basicRequest.
-
-        :param searching_request_request: (required)
-        :type searching_request_request: SearchingRequestRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._searching_request_serialize(
-            searching_request_request=searching_request_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BasicRequest200Response",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def searching_request_without_preload_content(
-        self,
-        searching_request_request: SearchingRequestRequest,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """
-
-        The \"searchingRequest\" method allows a client to request one or more UrbanDatasets through a REQUEST/RESPONSE call, providing the identifier of the resource, with search filters like geographical coordinates and period at the context level (contextualization element in the UrbanDataset format).  With all optional parameters set to null, it achieves the same result as a basicRequest.
-
-        :param searching_request_request: (required)
-        :type searching_request_request: SearchingRequestRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._searching_request_serialize(
-            searching_request_request=searching_request_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BasicRequest200Response",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _searching_request_serialize(
-        self,
-        searching_request_request,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if searching_request_request is not None:
-            _body_params = searching_request_request
+        if searching_request is not None:
+            _body_params = searching_request
 
 
         # set the HTTP header `Accept`
@@ -2772,9 +2500,9 @@ class UrbanDatasetGatewayApi:
 
 
     @validate_call
-    def specific_request(
+    def searching_by_property(
         self,
-        specific_request_request: Optional[SpecificRequestRequest] = None,
+        searching_by_property_request: Optional[SearchingByPropertyRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2787,13 +2515,13 @@ class UrbanDatasetGatewayApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> LastRequest200Response:
-        """specific_request
+    ) -> Basic200Response:
+        """searching_by_property
 
         
 
-        :param specific_request_request:
-        :type specific_request_request: SpecificRequestRequest
+        :param searching_by_property_request:
+        :type searching_by_property_request: SearchingByPropertyRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2816,8 +2544,8 @@ class UrbanDatasetGatewayApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._specific_request_serialize(
-            specific_request_request=specific_request_request,
+        _param = self._searching_by_property_serialize(
+            searching_by_property_request=searching_by_property_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2825,7 +2553,7 @@ class UrbanDatasetGatewayApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "LastRequest200Response",
+            '200': "Basic200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2839,9 +2567,9 @@ class UrbanDatasetGatewayApi:
 
 
     @validate_call
-    def specific_request_with_http_info(
+    def searching_by_property_with_http_info(
         self,
-        specific_request_request: Optional[SpecificRequestRequest] = None,
+        searching_by_property_request: Optional[SearchingByPropertyRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2854,13 +2582,13 @@ class UrbanDatasetGatewayApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[LastRequest200Response]:
-        """specific_request
+    ) -> ApiResponse[Basic200Response]:
+        """searching_by_property
 
         
 
-        :param specific_request_request:
-        :type specific_request_request: SpecificRequestRequest
+        :param searching_by_property_request:
+        :type searching_by_property_request: SearchingByPropertyRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2883,8 +2611,8 @@ class UrbanDatasetGatewayApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._specific_request_serialize(
-            specific_request_request=specific_request_request,
+        _param = self._searching_by_property_serialize(
+            searching_by_property_request=searching_by_property_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2892,7 +2620,7 @@ class UrbanDatasetGatewayApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "LastRequest200Response",
+            '200': "Basic200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2906,9 +2634,9 @@ class UrbanDatasetGatewayApi:
 
 
     @validate_call
-    def specific_request_without_preload_content(
+    def searching_by_property_without_preload_content(
         self,
-        specific_request_request: Optional[SpecificRequestRequest] = None,
+        searching_by_property_request: Optional[SearchingByPropertyRequest] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2922,12 +2650,12 @@ class UrbanDatasetGatewayApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """specific_request
+        """searching_by_property
 
         
 
-        :param specific_request_request:
-        :type specific_request_request: SpecificRequestRequest
+        :param searching_by_property_request:
+        :type searching_by_property_request: SearchingByPropertyRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2950,8 +2678,8 @@ class UrbanDatasetGatewayApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._specific_request_serialize(
-            specific_request_request=specific_request_request,
+        _param = self._searching_by_property_serialize(
+            searching_by_property_request=searching_by_property_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2959,7 +2687,7 @@ class UrbanDatasetGatewayApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "LastRequest200Response",
+            '200': "Basic200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2968,9 +2696,9 @@ class UrbanDatasetGatewayApi:
         return response_data.response
 
 
-    def _specific_request_serialize(
+    def _searching_by_property_serialize(
         self,
-        specific_request_request,
+        searching_by_property_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2994,8 +2722,280 @@ class UrbanDatasetGatewayApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if specific_request_request is not None:
-            _body_params = specific_request_request
+        if searching_by_property_request is not None:
+            _body_params = searching_by_property_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'bearerAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/searchingByPropertyRequest',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def specific(
+        self,
+        specific_request: Optional[SpecificRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> Last200Response:
+        """specific
+
+        
+
+        :param specific_request: 
+        :type specific_request: SpecificRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._specific_serialize(
+            specific_request=specific_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "Last200Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def specific_with_http_info(
+        self,
+        specific_request: Optional[SpecificRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[Last200Response]:
+        """specific
+
+        
+
+        :param specific_request: 
+        :type specific_request: SpecificRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._specific_serialize(
+            specific_request=specific_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "Last200Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def specific_without_preload_content(
+        self,
+        specific_request: Optional[SpecificRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """specific
+
+        
+
+        :param specific_request: 
+        :type specific_request: SpecificRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._specific_serialize(
+            specific_request=specific_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "Last200Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _specific_serialize(
+        self,
+        specific_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if specific_request is not None:
+            _body_params = specific_request
 
 
         # set the HTTP header `Accept`

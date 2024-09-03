@@ -1,4 +1,4 @@
-# DeepSearchingRequestRequest
+# DeepSearchingRequest
 
 
 ## Properties
@@ -17,19 +17,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from urbandatasetgateway_client.models.deep_searching_request_request import DeepSearchingRequestRequest
+from urbandatasetgateway_client.models.deep_searching_request import DeepSearchingRequest
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of DeepSearchingRequestRequest from a JSON string
-deep_searching_request_request_instance = DeepSearchingRequestRequest.from_json(json)
+# create an instance of DeepSearchingRequest from a JSON string
+deep_searching_request_instance = DeepSearchingRequest.from_json(json)
 # print the JSON string representation of the object
-print(DeepSearchingRequestRequest.to_json())
+print(DeepSearchingRequest.to_json())
 
 # convert the object into a dict
-deep_searching_request_request_dict = deep_searching_request_request_instance.to_dict()
-# create an instance of DeepSearchingRequestRequest from a dict
-deep_searching_request_request_from_dict = DeepSearchingRequestRequest.from_dict(deep_searching_request_request_dict)
+deep_searching_request_dict = deep_searching_request_instance.to_dict()
+# create an instance of DeepSearchingRequest from a dict
+deep_searching_request_from_dict = DeepSearchingRequest.from_dict(deep_searching_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

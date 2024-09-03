@@ -1,4 +1,4 @@
-# LastRequestRequest
+# LastRequest
 
 
 ## Properties
@@ -10,19 +10,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from urbandatasetgateway_client.models.last_request_request import LastRequestRequest
+from urbandatasetgateway_client.models.last_request import LastRequest
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of LastRequestRequest from a JSON string
-last_request_request_instance = LastRequestRequest.from_json(json)
+# create an instance of LastRequest from a JSON string
+last_request_instance = LastRequest.from_json(json)
 # print the JSON string representation of the object
-print(LastRequestRequest.to_json())
+print(LastRequest.to_json())
 
 # convert the object into a dict
-last_request_request_dict = last_request_request_instance.to_dict()
-# create an instance of LastRequestRequest from a dict
-last_request_request_from_dict = LastRequestRequest.from_dict(last_request_request_dict)
+last_request_dict = last_request_instance.to_dict()
+# create an instance of LastRequest from a dict
+last_request_from_dict = LastRequest.from_dict(last_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

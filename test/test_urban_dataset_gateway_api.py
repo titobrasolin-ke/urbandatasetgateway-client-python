@@ -27,14 +27,14 @@ class TestUrbanDatasetGatewayApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_basic_request(self) -> None:
-        """Test case for basic_request
+    def test_basic(self) -> None:
+        """Test case for basic
 
         """
         pass
 
-    def test_deep_searching_request(self) -> None:
-        """Test case for deep_searching_request
+    def test_deep_searching(self) -> None:
+        """Test case for deep_searching
 
         """
         pass
@@ -51,8 +51,8 @@ class TestUrbanDatasetGatewayApi(unittest.TestCase):
         """
         pass
 
-    def test_last_request(self) -> None:
-        """Test case for last_request
+    def test_last(self) -> None:
+        """Test case for last
 
         
         """
@@ -78,21 +78,21 @@ class TestUrbanDatasetGatewayApi(unittest.TestCase):
         """
         pass
 
-    def test_searching_by_property_request(self) -> None:
-        """Test case for searching_by_property_request
-
-        """
-        pass
-
-    def test_searching_request(self) -> None:
-        """Test case for searching_request
+    def test_searching(self) -> None:
+        """Test case for searching
 
         
         """
         pass
 
-    def test_specific_request(self) -> None:
-        """Test case for specific_request
+    def test_searching_by_property(self) -> None:
+        """Test case for searching_by_property
+
+        """
+        pass
+
+    def test_specific(self) -> None:
+        """Test case for specific
 
         """
         pass

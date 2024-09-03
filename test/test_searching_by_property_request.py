@@ -15,10 +15,10 @@
 
 import unittest
 
-from urbandatasetgateway_client.models.searching_by_property_request_request import SearchingByPropertyRequestRequest
+from urbandatasetgateway_client.models.searching_by_property_request import SearchingByPropertyRequest
 
-class TestSearchingByPropertyRequestRequest(unittest.TestCase):
-    """SearchingByPropertyRequestRequest unit test stubs"""
+class TestSearchingByPropertyRequest(unittest.TestCase):
+    """SearchingByPropertyRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,16 +26,16 @@ class TestSearchingByPropertyRequestRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SearchingByPropertyRequestRequest:
-        """Test SearchingByPropertyRequestRequest
+    def make_instance(self, include_optional) -> SearchingByPropertyRequest:
+        """Test SearchingByPropertyRequest
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `SearchingByPropertyRequestRequest`
+        # uncomment below to create an instance of `SearchingByPropertyRequest`
         """
-        model = SearchingByPropertyRequestRequest()
+        model = SearchingByPropertyRequest()
         if include_optional:
-            return SearchingByPropertyRequestRequest(
+            return SearchingByPropertyRequest(
                 resource_id = '',
                 property_name = '',
                 property_value = '',
@@ -46,15 +46,15 @@ class TestSearchingByPropertyRequestRequest(unittest.TestCase):
                 distance = ''
             )
         else:
-            return SearchingByPropertyRequestRequest(
+            return SearchingByPropertyRequest(
                 resource_id = '',
                 property_name = '',
                 property_value = '',
         )
         """
 
-    def testSearchingByPropertyRequestRequest(self):
-        """Test SearchingByPropertyRequestRequest"""
+    def testSearchingByPropertyRequest(self):
+        """Test SearchingByPropertyRequest"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

@@ -15,10 +15,10 @@
 
 import unittest
 
-from urbandatasetgateway_client.models.specific_request_request import SpecificRequestRequest
+from urbandatasetgateway_client.models.searching_request import SearchingRequest
 
-class TestSpecificRequestRequest(unittest.TestCase):
-    """SpecificRequestRequest unit test stubs"""
+class TestSearchingRequest(unittest.TestCase):
+    """SearchingRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,28 +26,31 @@ class TestSpecificRequestRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SpecificRequestRequest:
-        """Test SpecificRequestRequest
+    def make_instance(self, include_optional) -> SearchingRequest:
+        """Test SearchingRequest
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `SpecificRequestRequest`
+        # uncomment below to create an instance of `SearchingRequest`
         """
-        model = SpecificRequestRequest()
+        model = SearchingRequest()
         if include_optional:
-            return SpecificRequestRequest(
+            return SearchingRequest(
                 resource_id = '',
-                timestamp = ''
+                period_start = '',
+                period_end = '',
+                center_latitude = '',
+                center_longitude = '',
+                distance = ''
             )
         else:
-            return SpecificRequestRequest(
+            return SearchingRequest(
                 resource_id = '',
-                timestamp = '',
         )
         """
 
-    def testSpecificRequestRequest(self):
-        """Test SpecificRequestRequest"""
+    def testSearchingRequest(self):
+        """Test SearchingRequest"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

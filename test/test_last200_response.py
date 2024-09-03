@@ -15,10 +15,10 @@
 
 import unittest
 
-from urbandatasetgateway_client.models.last_request200_response import LastRequest200Response
+from urbandatasetgateway_client.models.last200_response import Last200Response
 
-class TestLastRequest200Response(unittest.TestCase):
-    """LastRequest200Response unit test stubs"""
+class TestLast200Response(unittest.TestCase):
+    """Last200Response unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,16 +26,16 @@ class TestLastRequest200Response(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> LastRequest200Response:
-        """Test LastRequest200Response
+    def make_instance(self, include_optional) -> Last200Response:
+        """Test Last200Response
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `LastRequest200Response`
+        # uncomment below to create an instance of `Last200Response`
         """
-        model = LastRequest200Response()
+        model = Last200Response()
         if include_optional:
-            return LastRequest200Response(
+            return Last200Response(
                 code = '',
                 message = '',
                 dataset = urbandatasetgateway_client.models.scps_urbandataset_schema_2/0.scps-urbandataset-schema-2.0(
@@ -90,7 +90,7 @@ class TestLastRequest200Response(unittest.TestCase):
                                 ], ), ), )
             )
         else:
-            return LastRequest200Response(
+            return Last200Response(
                 code = '',
                 message = '',
                 dataset = urbandatasetgateway_client.models.scps_urbandataset_schema_2/0.scps-urbandataset-schema-2.0(
@@ -146,8 +146,8 @@ class TestLastRequest200Response(unittest.TestCase):
         )
         """
 
-    def testLastRequest200Response(self):
-        """Test LastRequest200Response"""
+    def testLast200Response(self):
+        """Test Last200Response"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
